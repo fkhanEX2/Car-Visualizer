@@ -1,0 +1,3 @@
+interface IInitialPayload {
+  container: string;
+}
