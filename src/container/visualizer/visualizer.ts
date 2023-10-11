@@ -1,19 +1,27 @@
 import { VisualizerService } from "../../services/visualizer";
-import CacheStorage from "../../shared/cacheStorage";
+import cacheStorage from "../../shared/cacheStorage";
 import { loadCacheAndLocalStorage } from "../../shared/common";
-import LocalStorage from "../../shared/localStorage";
+import localStorage from "../../shared/localStorage";
+import { INITIAL_PAYLOAD } from "../../utils/constants";
+import { loadCategory, renderCategories } from "../category/category";
 import { loadPano } from "../pano/pano";
 
 export const loadVisualizerData = async () => {
   try {
     const res = await VisualizerService.getVisualizerData();
-    CacheStorage.storage.visualizer = res;
+    cacheStorage.storage.visualizer = res;
     loadCacheAndLocalStorage();
+    loadPano();
+    render();
   } catch (err: any) {
     console.log(err);
   }
 };
 
-export const loadVisualizer = async () => {
-  await loadPano();
+export const render = () => {
+  const data = localStorage.getItem();
+  const scene = cacheStorage.storage.visualizer.scenes.find(
+    (scene) => scene.id === data.sceneId
+  )!;
+  loadCategory(scene, INITIAL_PAYLOAD.visualizerContainer);
 };

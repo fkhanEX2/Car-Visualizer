@@ -1,15 +1,18 @@
+import { INITIAL_PAYLOAD } from "../utils/constants";
+import cacheStorage from "./cacheStorage";
+
 export class LocalStorage {
   key: string;
   constructor() {
-    this.key = "Visualizer";
+    this.key = INITIAL_PAYLOAD.key;
   }
 
-  getItem() {
+  getItem(): ILocalStorage {
     const data = sessionStorage.getItem(this.key);
     return data ? JSON.parse(data) : "";
   }
 
-  setItem(data: IStorage) {
+  setItem(data: ILocalStorage) {
     data.date = new Date().getTime();
     sessionStorage.setItem(this.key, JSON.stringify(data));
   }
@@ -38,18 +41,28 @@ export class LocalStorage {
         date: new Date().getTime(),
         visualizerId: model.id,
         visualizerName: model.name,
-        scene: [],
+        sceneId: cacheStorage.storage.visualizer.scenes.find(
+          (scene) => scene.isDefault
+        )!.id,
+        sceneName: cacheStorage.storage.visualizer.scenes.find(
+          (scene) => scene.isDefault
+        )!.name,
+        selection: [],
       });
     }
   }
 
-  getScene() {
-    return this.getItem().scene;
+  setSelections(selections: IStorageSelection[]) {
+    const data = this.getItem();
+    if (data) {
+      this.setItem({ ...data, selection: selections });
+    }
   }
 
-  // setScene(sceneData: IStorageScene) {
-  //   this.setItem(sceneData);
-  // }
+  getDefaultSceneId() {
+    const data = this.getItem();
+    return data.sceneId;
+  }
 }
 
 export default new LocalStorage();

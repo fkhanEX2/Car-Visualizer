@@ -1,9 +1,11 @@
-import { VISUALIZER_CONTAINER } from "../../utils/constants";
+import { INITIAL_PAYLOAD } from "../../utils/constants";
 import { $id } from "../../utils/dom";
 
 export const createAScene = () => {
   const scene = document.createElement("a-scene");
-  $id(VISUALIZER_CONTAINER)?.appendChild(scene);
+  scene.classList.add(INITIAL_PAYLOAD.aSceneContainer);
+  $id(INITIAL_PAYLOAD.visualizerContainer)?.appendChild(scene);
+  return scene;
 };
 
 export const createSky = (

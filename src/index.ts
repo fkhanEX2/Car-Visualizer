@@ -4,19 +4,14 @@ import BaseImage from "./static/images/Scene-1.jpg";
 import HotspotImage from "./static/images/S1C2T1.png";
 import TableImage from "./static/images/S1C1S1.png";
 import CabinatImage from "./static/images/S1C2S3.png";
-import { INITIAL_PAYLOAD, VISUALIZER_CONTAINER } from "./utils/constants";
+import { INITIAL_PAYLOAD } from "./utils/constants";
 import { $id } from "./utils/dom";
-import {
-  loadVisualizerData,
-  loadVisualizer,
-} from "./container/visualizer/visualizer";
-import store from "./shared/cacheStorage";
-import { addLoader } from "./component/loader/loader";
+import { loadVisualizerData } from "./container/visualizer/visualizer";
 
 const createVisualizerContainer = () => {
   const visualizerContainer = document.createElement("div");
-  visualizerContainer.id = VISUALIZER_CONTAINER;
-  visualizerContainer.classList.add(VISUALIZER_CONTAINER);
+  visualizerContainer.id = INITIAL_PAYLOAD.visualizerContainer;
+  visualizerContainer.classList.add(INITIAL_PAYLOAD.visualizerContainer);
   const mainContainer = $id(INITIAL_PAYLOAD.container);
   mainContainer?.appendChild(visualizerContainer);
 };
@@ -63,11 +58,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Append the hotspot to the hotspot container
   // hotspotContainer.appendChild(hotspot);
   // document.body.appendChild(scene);
-
   // createVisualizerContainer();
   // addLoader(INITIAL_PAYLOAD.container);
   // await loadVisualizerData();
   // await loadVisualizer();
-
   await loadApp();
 });

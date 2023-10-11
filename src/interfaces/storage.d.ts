@@ -2,22 +2,25 @@ interface IStorageSelection {
   category: string;
   categoryId: number;
   swatchName: string;
-  swatchId: string;
+  swatchId: number;
 }
-interface IStorageScene {
-  id: number;
-  name: string;
-  dafaultSelection: IStorageSelection[];
-  currentSelection: IStorageSelection[];
-}
-interface IStorage {
+// interface IStorageScene {
+//   id: number;
+//   name: string;
+//   dafaultSelection: IStorageSelection[];
+//   currentSelection: IStorageSelection[];
+// }
+interface ILocalStorage {
   visualizerId: number;
   visualizerName: string;
   date: number;
-  scene: IStorageScene[];
+  sceneId: number;
+  sceneName: string;
+  selection: IStorageSelection[];
 }
 
 interface ICacheStorage {
   visualizer: IVisualizer;
-  selections: IStorageSelection;
+  selections: IStorageSelection[];
+  currentSceneId: number;
 }

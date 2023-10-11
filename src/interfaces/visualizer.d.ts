@@ -11,6 +11,7 @@ interface IHotspot {
   pitch: number;
   thumbnail: string;
   header: string;
+  sceneId: number;
 }
 
 interface ISwatch {
@@ -19,6 +20,8 @@ interface ISwatch {
   isSelected: boolean;
   path: string;
   thumbnailPath: string;
+  initialPosition: IInitialPosition;
+  initialRotation: IInitialRotation;
 }
 
 interface ICategory {
@@ -48,6 +51,7 @@ interface IScene {
   initialView: IInitialView;
   initialPosition: IInitialPosition;
   initialRotation: IInitialRotation;
+  isDefault: boolean;
   hotspots: IHotspot[];
 }
 
