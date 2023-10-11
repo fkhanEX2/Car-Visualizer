@@ -17,6 +17,7 @@ import Cat2Tbn3 from "./static/images/S1C2T3.png";
 import Cat3Tbn1 from "./static/images/S1C3T1.png";
 import Cat3Tbn2 from "./static/images/S1C3T2.png";
 import Cat3Tbn3 from "./static/images/S1C3T3.png";
+import Hotspot from "./static/images/hotspsot.png";
 
 export const data: IVisualizer = {
   name: "Visualizer 1",
@@ -159,18 +160,21 @@ export const data: IVisualizer = {
           id: 3624,
           yaw: 0,
           pitch: 0,
-          thumbnail: "Need to add",
+          thumbnail: Hotspot,
           header: "Dining Room Visualizer",
           sceneId: 4845,
+          initialPosition: { x: 4, y: 0, z: -3 },
+          initialRotation: { x: 0, y: 0, z: 0 },
         },
         {
           id: 3625,
-          thumbnail:
-            "https://sprint-assets.thebdxinteractive.com/visualizer/ff397a6f-500c-4be0-8d48-fca8b5c67a05.png",
+          thumbnail: Hotspot,
           yaw: 0.8,
           pitch: 0,
           header: "Empty Kitchen",
           sceneId: 4846,
+          initialPosition: { x: -4, y: 0, z: -3 },
+          initialRotation: { x: 0, y: 0, z: 0 },
         },
       ],
     },

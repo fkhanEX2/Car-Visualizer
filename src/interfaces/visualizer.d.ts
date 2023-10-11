@@ -12,6 +12,8 @@ interface IHotspot {
   thumbnail: string;
   header: string;
   sceneId: number;
+  initialPosition: IInitialPosition;
+  initialRotation: IInitialRotation;
 }
 
 interface ISwatch {

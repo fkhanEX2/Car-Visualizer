@@ -55,12 +55,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // hotspot.addEventListener("click", () => {
   //   console.log("Hotspot clicked!");
   // });
+  // scene.appendChild(hotspot);
   // Append the hotspot to the hotspot container
   // hotspotContainer.appendChild(hotspot);
   // document.body.appendChild(scene);
-  // createVisualizerContainer();
-  // addLoader(INITIAL_PAYLOAD.container);
-  // await loadVisualizerData();
-  // await loadVisualizer();
   await loadApp();
 });
