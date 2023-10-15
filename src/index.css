@@ -27,6 +27,10 @@
   margin-bottom: 20px;
 }
 
+.scene-hotspot {
+  cursor: pointer;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

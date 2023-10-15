@@ -1,5 +1,6 @@
 import { INITIAL_PAYLOAD } from "../utils/constants";
 import cacheStorage from "./cacheStorage";
+import { getSelections } from "./common";
 
 export class LocalStorage {
   key: string;
@@ -37,19 +38,33 @@ export class LocalStorage {
   init(model: IVisualizer) {
     const data = this.getItem();
     if (!data) {
+      const { id, name } = cacheStorage.storage.visualizer.scenes.find(
+        (scene) => scene.isDefault
+      )!;
+      const selections = getSelections(id);
       this.setItem({
         date: new Date().getTime(),
         visualizerId: model.id,
         visualizerName: model.name,
-        sceneId: cacheStorage.storage.visualizer.scenes.find(
-          (scene) => scene.isDefault
-        )!.id,
-        sceneName: cacheStorage.storage.visualizer.scenes.find(
-          (scene) => scene.isDefault
-        )!.name,
-        selection: [],
+        sceneId: id,
+        sceneName: name,
+        selection: [...selections],
       });
     }
+  }
+
+  updateStorage(sceneId: number) {
+    const { name } = cacheStorage.storage.visualizer.scenes.find(
+      (scene) => scene.id === sceneId
+    )!;
+    const selections = getSelections(sceneId);
+    const data = this.getItem();
+    this.setItem({
+      ...data,
+      sceneId: sceneId,
+      sceneName: name,
+      selection: [...selections],
+    });
   }
 
   setSelections(selections: IStorageSelection[]) {

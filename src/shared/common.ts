@@ -17,8 +17,8 @@ export const loadLocalStorage = () => {
     localStorage.clearStorage();
   }
   localStorage.init(cacheStorage.storage.visualizer);
-  const defaultSceneId = localStorage.getDefaultSceneId();
-  localStorage.setSelections(getSelections(defaultSceneId));
+  // const defaultSceneId = localStorage.getDefaultSceneId();
+  // localStorage.setSelections(getSelections(defaultSceneId));
 };
 
 export const getSelections = (sceneId: number) => {

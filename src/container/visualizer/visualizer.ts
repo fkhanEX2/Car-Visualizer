@@ -3,7 +3,7 @@ import cacheStorage from "../../shared/cacheStorage";
 import { loadCacheAndLocalStorage } from "../../shared/common";
 import localStorage from "../../shared/localStorage";
 import { INITIAL_PAYLOAD } from "../../utils/constants";
-import { loadCategory, renderCategories } from "../category/category";
+import { loadCategory } from "../category/category";
 import { loadHotspot } from "../hotspot/hotspot";
 import { loadPano } from "../pano/pano";
 
@@ -11,12 +11,16 @@ export const loadVisualizerData = async () => {
   try {
     const res = await VisualizerService.getVisualizerData();
     cacheStorage.storage.visualizer = res;
-    loadCacheAndLocalStorage();
-    loadPano();
-    render();
+    loadVisualizer();
   } catch (err: any) {
     console.log(err);
   }
+};
+
+export const loadVisualizer = () => {
+  loadCacheAndLocalStorage();
+  loadPano();
+  render();
 };
 
 export const render = () => {

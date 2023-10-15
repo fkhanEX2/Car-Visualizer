@@ -1,9 +1,15 @@
 import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
-import { $id, $queryAll } from "../../utils/dom";
+import { $id, $query, $queryAll } from "../../utils/dom";
 import { loadSwatches } from "../swatch/swatch";
 
 export const loadCategory = (currentScene: IScene, container: string) => {
+  const categoryContainer = $query(`.category-container`);
+  const swatchContainer = $query(`.swatch-category`);
+  swatchContainer?.remove();
+  if (categoryContainer) {
+    categoryContainer.remove();
+  }
   const { categories } = currentScene;
   if (categories.length > 0) {
     $id(container)!.insertAdjacentHTML(
@@ -45,7 +51,7 @@ export const categoryClick = (element: HTMLElement) => {
 
 export const renderCategories = (categories: ICategory[]) => {
   return `
-      <div class="category-container category-overlay">
+      <div class="category-container">
           <ul class="category-container-list">
               ${categories
                 .map(

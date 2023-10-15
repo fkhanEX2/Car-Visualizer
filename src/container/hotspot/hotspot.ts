@@ -1,7 +1,14 @@
 import { createHotspotEntity } from "../../component/entities/entities";
+import { loadClickEvent } from "../../component/events/customEvents";
 import { $query, $queryAll } from "../../utils/dom";
+import localStorage from "../../shared/localStorage";
+import { loadVisualizer } from "../visualizer/visualizer";
 
 export const loadHotspot = (currentScene: IScene, container: string) => {
+  const hotspotEntities = $queryAll(".scene-hotspot");
+  hotspotEntities.forEach((hotspotEntity) => {
+    hotspotEntity.remove();
+  });
   const AsceneContainer = $query(`.${container}`);
   if (AsceneContainer) {
     currentScene.hotspots.forEach((hotspot) => {
@@ -17,6 +24,8 @@ export const loadHotspot = (currentScene: IScene, container: string) => {
       );
       AsceneContainer.appendChild(hotspotEntity);
     });
+
+    addHotspotClickListener();
   }
 };
 
@@ -25,11 +34,11 @@ export const addHotspotClickListener = () => {
   hotspotEntities.forEach((hotspotEntity) => {
     hotspotEntity.addEventListener("click", (e) => {
       e.stopPropagation();
-      console.log(
-        hotspotEntity.getAttribute("data-hotspot-id"),
-        hotspotEntity.getAttribute("data-scene-id")
-      );
+      const newSceneId = (e.target as HTMLElement).getAttribute(
+        "data-scene-id"
+      )!;
+      localStorage.updateStorage(Number(newSceneId));
+      loadVisualizer();
     });
   });
-  console.log($queryAll(".scene-hotspot"));
 };
