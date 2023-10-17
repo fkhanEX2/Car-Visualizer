@@ -122,11 +122,9 @@ export const selectedSwatchClick = ({
     .categories.find((category) => category.id === categoryId)!
     .swatches.find((swatch) => swatch.id === swatchId)!;
   $queryAll(".swatch-layer").forEach((layer) => {
-    if (
-      !swatchIds.includes(layer.getAttribute("data-swatch-id") as string) &&
-      !categoryIds.includes(layer.getAttribute("data-category-id") as string)
-    ) {
+    if (!swatchIds.includes(layer.getAttribute("data-swatch-id") as string)) {
       layer.setAttribute("src", imagePath);
+      layer.setAttribute("data-swatch-id", swatchId.toString());
     }
   });
 };
