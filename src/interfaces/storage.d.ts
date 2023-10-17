@@ -11,10 +11,12 @@ interface ILocalStorage {
   sceneId: number;
   sceneName: string;
   selection: IStorageSelection[];
+  chats: IQuesAns[];
 }
 
 interface ICacheStorage {
   visualizer: IVisualizer;
   selections: IStorageSelection[];
   currentSceneId: number;
+  chats: IQuesAns[];
 }

@@ -10,6 +10,7 @@ export const loadCacheStorage = () => {
   const data = localStorage.getItem();
   cacheStorage.storage.selections = [...data.selection];
   cacheStorage.storage.currentSceneId = data.sceneId;
+  cacheStorage.storage.chats = [...data.chats];
 };
 
 export const loadLocalStorage = () => {
@@ -17,7 +18,7 @@ export const loadLocalStorage = () => {
     localStorage.clearStorage();
   }
   localStorage.init(cacheStorage.storage.visualizer);
-  // const defaultSceneId = localStorage.getDefaultSceneId();
+  // const defaultSceneId = localStorage.getCurrentSceneId();
   // localStorage.setSelections(getSelections(defaultSceneId));
 };
 

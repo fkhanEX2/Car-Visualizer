@@ -1,0 +1,11 @@
+.chat-collapse-icon {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.hidden {
+  display: none;
+}

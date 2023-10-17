@@ -49,6 +49,7 @@ export class LocalStorage {
         sceneId: id,
         sceneName: name,
         selection: [...selections],
+        chats: [],
       });
     }
   }
@@ -74,9 +75,16 @@ export class LocalStorage {
     }
   }
 
-  getDefaultSceneId() {
+  getCurrentSceneId() {
     const data = this.getItem();
     return data.sceneId;
+  }
+
+  setChat(chat: IQuesAns) {
+    const data = this.getItem();
+    if (data) {
+      this.setItem({ ...data, chats: [...data.chats, chat] });
+    }
   }
 }
 
