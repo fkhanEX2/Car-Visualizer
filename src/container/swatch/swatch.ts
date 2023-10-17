@@ -113,9 +113,6 @@ export const selectedSwatchClick = ({
   const swatchIds = newSelections.map((selection) =>
     selection.swatchId.toString()
   );
-  const categoryIds = newSelections.map((selection) =>
-    selection.categoryId.toString()
-  );
   const { currentSceneId, visualizer } = cacheStorage.storage;
   const { path: imagePath } = visualizer.scenes
     .find((scene) => scene.id === currentSceneId)!
