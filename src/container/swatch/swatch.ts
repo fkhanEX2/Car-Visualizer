@@ -5,15 +5,17 @@ import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
 
-export const loadSwatches = (categories: ICategory[], container: string) => {
+export const loadSwatches = (container: string) => {
   pubsub.subscribe(
     PUBSUB_CONSTANTS.CATEGORY_SELECT_EVENT,
     ({
       categoryId: id,
       categoryName: name,
+      categories,
     }: {
       categoryId: number;
       categoryName: string;
+      categories: ICategory[];
     }) => {
       const { swatches } = categories.find((category) => category.id === id)!;
       initializeSwatches(swatches, container, id, name);

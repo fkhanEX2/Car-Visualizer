@@ -1,3 +1,4 @@
+import cacheStorage from "../../shared/cacheStorage";
 import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
@@ -16,7 +17,7 @@ export const loadCategory = (currentScene: IScene, container: string) => {
       "beforeend",
       renderCategories(categories)
     );
-    loadSwatches(categories, INITIAL_PAYLOAD.visualizerContainer);
+    loadSwatches(INITIAL_PAYLOAD.visualizerContainer);
     const categoryLi = $queryAll("ul.category-container-list li");
 
     if (categoryLi.length > 0) categoryClick(categoryLi[0] as HTMLElement);
@@ -43,7 +44,12 @@ export const categoryClick = (element: HTMLElement) => {
   const categoryName = selectedCategory.getAttribute(
     "data-category-name"
   ) as string;
+  const { currentSceneId, visualizer } = cacheStorage.storage;
+  const { categories } = visualizer.scenes.find(
+    (scene) => scene.id === currentSceneId
+  )!;
   pubsub.publish(PUBSUB_CONSTANTS.CATEGORY_SELECT_EVENT, {
+    categories,
     categoryId,
     categoryName,
   });
