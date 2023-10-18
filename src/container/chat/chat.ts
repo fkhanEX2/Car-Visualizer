@@ -118,7 +118,16 @@ export const chatSubmitHandler = async (
           swatchName,
         } as ISwatchDetail);
         const swatchesLi = $queryAll("ul.swatch-category-list li");
-        selectCurrentSwatch(categoryId, swatchesLi as NodeListOf<HTMLElement>);
+        const activeCtaegory = $query(`.category-container-list-item.active`);
+        if (
+          activeCtaegory &&
+          Number(activeCtaegory.getAttribute("data-category-id")) === categoryId
+        ) {
+          selectCurrentSwatch(
+            categoryId,
+            swatchesLi as NodeListOf<HTMLElement>
+          );
+        }
       }
     }
   } catch (err: any) {

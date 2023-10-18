@@ -5,15 +5,17 @@ import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
 
-export const loadSwatches = (categories: ICategory[], container: string) => {
+export const loadSwatches = (container: string) => {
   pubsub.subscribe(
     PUBSUB_CONSTANTS.CATEGORY_SELECT_EVENT,
     ({
       categoryId: id,
       categoryName: name,
+      categories,
     }: {
       categoryId: number;
       categoryName: string;
+      categories: ICategory[];
     }) => {
       const { swatches } = categories.find((category) => category.id === id)!;
       initializeSwatches(swatches, container, id, name);
@@ -113,20 +115,15 @@ export const selectedSwatchClick = ({
   const swatchIds = newSelections.map((selection) =>
     selection.swatchId.toString()
   );
-  const categoryIds = newSelections.map((selection) =>
-    selection.categoryId.toString()
-  );
   const { currentSceneId, visualizer } = cacheStorage.storage;
   const { path: imagePath } = visualizer.scenes
     .find((scene) => scene.id === currentSceneId)!
     .categories.find((category) => category.id === categoryId)!
     .swatches.find((swatch) => swatch.id === swatchId)!;
   $queryAll(".swatch-layer").forEach((layer) => {
-    if (
-      !swatchIds.includes(layer.getAttribute("data-swatch-id") as string) &&
-      !categoryIds.includes(layer.getAttribute("data-category-id") as string)
-    ) {
+    if (!swatchIds.includes(layer.getAttribute("data-swatch-id") as string)) {
       layer.setAttribute("src", imagePath);
+      layer.setAttribute("data-swatch-id", swatchId.toString());
     }
   });
 };
