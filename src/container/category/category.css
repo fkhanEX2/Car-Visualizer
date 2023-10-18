@@ -2,14 +2,16 @@ li{
     list-style: none;
 }
 .category-container li{
+    font-size: 14px;
     background-color: black;
     color: #fff;
     padding: 8px 16px;
     border-radius: 50px;
     cursor: pointer;
 }
-.category-container li:active{
+.category-container-list-item.active{
     background-color:#D8A377;
+    border: none;  
 }
 .category-container-list{
     display: flex;
