@@ -4,6 +4,7 @@ import localStorage from "../../shared/localStorage";
 import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
+import "./swatch.css"
 
 export const loadSwatches = (container: string) => {
   pubsub.subscribe(

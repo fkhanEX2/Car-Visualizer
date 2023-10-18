@@ -3,6 +3,7 @@ import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import { loadSwatches } from "../swatch/swatch";
+import "./category.css";
 
 export const loadCategory = (currentScene: IScene, container: string) => {
   const categoryContainer = $query(`.category-container`);

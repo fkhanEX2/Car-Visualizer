@@ -9,3 +9,29 @@
 .hidden {
   display: none;
 }
+
+.chat-container{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.chat-collapse-icon{
+  width: 15px;
+  height: 15px;
+}
+.chat-header-icon{
+  display: flex;
+  gap: 20px;
+}
+.chat-header{
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: 250px;
+  border-radius: 10px 0 0 0;
+}

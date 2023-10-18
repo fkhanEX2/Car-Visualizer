@@ -1,6 +1,9 @@
 import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
 import CollapseIcon from "../../static/images/collapseArrow.png";
 import ChatSendIcon from "../../static/images/sendChatIcon.png";
+import closeIcon from "../../static/images/closeIcon.png";
+import downArrow from "../../static/images/downArrow.png";
+import crossIcon from "../../static/images/crossIcon.png"
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";
@@ -42,7 +45,7 @@ export const renderChat = (chats: IQuesAns[]) => {
     <div class="chat-container">
         <div class="chat-header">
             <p class="chat-heading">${CHAT_HEADER}</p>
-            <img class="chat-collapse-icon" src=${CollapseIcon}/>
+            <img class="chat-collapse-icon rotate" src=${downArrow}/>
         </div>
         <div class="chat-body hidden">
             <ul class="chat-list">

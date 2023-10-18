@@ -1,0 +1,23 @@
+.swatch-category-list{
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 10px;
+}
+.swatch-container-list-item{
+    background-color: black;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.swatch-container-list-item.active{
+    border: 2px solid #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+.swatch-container-list-item img{
+    width: 124px;
+    height: 90px;
+}
+.swatch-container-list-item p{
+   padding-left: 10px;
+}
