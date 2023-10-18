@@ -1,6 +1,8 @@
 import { Entity } from "aframe";
 import { INITIAL_PAYLOAD } from "../../utils/constants";
 import { $id } from "../../utils/dom";
+import "./entities.css";
+
 
 export const createAScene = () => {
   const scene = document.createElement("a-scene");

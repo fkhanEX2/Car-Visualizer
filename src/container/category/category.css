@@ -1,0 +1,19 @@
+li{
+    list-style: none;
+}
+.category-container li{
+    background-color: black;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.category-container li:active{
+    background-color:#D8A377;
+}
+.category-container-list{
+    display: flex;
+    width: calc(100% - 245px);
+    align-items: flex-start;
+    gap: 10px;
+}
