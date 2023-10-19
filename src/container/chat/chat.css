@@ -11,12 +11,13 @@
 }
 
 .chat-container{
+  max-height: 500px;
   background-color: #000;
   z-index: 1;
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px 0 0 0;
 }
 .chat-collapse-icon{
@@ -41,6 +42,7 @@
 }
 .chat-list{
   margin-left: -30px;
+  overflow-y:scroll;
 }
 .chat-body{
   color: #fff;
@@ -65,6 +67,7 @@
     background: #31302F;
     border-radius: 1000px;
     color: #fff;
+    margin-top: 10px;
 }
 .chat-input{
   background-color: transparent;
@@ -76,4 +79,14 @@
   background-color: transparent;
 border: none;
 cursor: pointer;
+}
+
+.chat-submit.disable{
+  cursor: not-allowed;
+}
+.chat-list-container{
+   height: 140px;
+    max-height: 140px;
+    overflow-y: scroll;
+    padding: 10px 0;
 }

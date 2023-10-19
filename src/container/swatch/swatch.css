@@ -1,8 +1,18 @@
-
+.swatch-category{
+    top: 60px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+.swatch-category img{
+    width: 20px;
+    height: 20px;
+}
 .swatch-category-list {
 display: flex;
   gap: 20px;
-  position: absolute;
   top: 50px;
 }
 .swatch-container-list-item {
@@ -28,8 +38,7 @@ display: flex;
   display: none;
 }
 .swatch-container-close{
-   position: absolute;
-   top: 41px;
+     top: 41px;
    left: 623px;
    cursor: pointer;
 
