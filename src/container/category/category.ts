@@ -26,6 +26,10 @@ export const loadCategory = (currentScene: IScene, container: string) => {
     categoryLi.forEach((element) =>
       element.addEventListener("click", (event) => {
         categoryClick(event.target as HTMLElement);
+        const swatchContainer = $query(".swatch-category");
+        if (swatchContainer) {
+          swatchContainer.classList.remove("hide");
+        }
       })
     );
   }

@@ -1,5 +1,4 @@
 import { createHotspotEntity } from "../../component/entities/entities";
-import { loadClickEvent } from "../../component/events/customEvents";
 import { $query, $queryAll } from "../../utils/dom";
 import localStorage from "../../shared/localStorage";
 import { loadVisualizer } from "../visualizer/visualizer";

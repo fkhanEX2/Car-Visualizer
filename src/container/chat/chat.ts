@@ -1,9 +1,6 @@
 import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
-import CollapseIcon from "../../static/images/collapseArrow.png";
 import ChatSendIcon from "../../static/images/SendChatIcon.png";
-import closeIcon from "../../static/images/closeIcon.png";
 import downArrow from "../../static/images/downArrow.png";
-import crossIcon from "../../static/images/crossIcon.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";

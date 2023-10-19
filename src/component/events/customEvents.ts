@@ -1,13 +1,13 @@
-import { loadVisualizer } from "../../container/visualizer/visualizer";
-import localStorage from "../../shared/localStorage";
-
-export const loadClickEvent = (id:string) => {
-  AFRAME.registerComponent("event-listener"+id, {
+export const loadClickEvent = (id: string) => {
+  AFRAME.registerComponent("event-listener" + id, {
     init: function () {
       this.el.addEventListener("click", (e) => {
-        e.stopPropagation()
-        if(e.target && (e.target as HTMLElement).classList.contains("scene-hotspot")){
-          console.log(e.target)
+        e.stopPropagation();
+        if (
+          e.target &&
+          (e.target as HTMLElement).classList.contains("scene-hotspot")
+        ) {
+          console.log(e.target);
         }
         // if (e.target) {
         //   const newSceneId = (e.target as HTMLElement).getAttribute(
@@ -16,8 +16,8 @@ export const loadClickEvent = (id:string) => {
         //   localStorage.updateStorage(Number(newSceneId));
         //   loadVisualizer();
         // }
-        this.el.addEventListener("mouseleave", () => {})
-        this.el.addEventListener("mouseenter", () => {})
+        this.el.addEventListener("mouseleave", () => {});
+        this.el.addEventListener("mouseenter", () => {});
       });
     },
   });

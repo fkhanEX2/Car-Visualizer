@@ -4,7 +4,8 @@ import localStorage from "../../shared/localStorage";
 import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
-import "./swatch.css"
+import CrossIcon from "../../static/images/crossIcon.png";
+import "./swatch.css";
 
 export const loadSwatches = (container: string) => {
   pubsub.subscribe(
@@ -39,6 +40,16 @@ export const initializeSwatches = (
     swatchContainer.remove();
   }
   visualizerContainer.insertAdjacentHTML("beforeend", renderSwatches(swatches));
+  const swatchCloseButton = $query(".swatch-container-close");
+  const newSwatchContainer = $query(
+    ".swatch-category",
+    visualizerContainer as HTMLElement
+  );
+  if (swatchCloseButton && newSwatchContainer) {
+    swatchCloseButton.addEventListener("click", () => {
+      newSwatchContainer.classList.add("hide");
+    });
+  }
   const swatchesLi = $queryAll(
     "ul.swatch-category-list li",
     visualizerContainer as HTMLElement
@@ -159,7 +170,8 @@ export const swatchClick = (
 
 export const renderSwatches = (swatches: ISwatch[]) => {
   return `
-  <div class="swatch-category">
+  <div class="swatch-category hide">
+    <img class="swatch-container-close" src=${CrossIcon}>
     <ul class="swatch-category-list">
         ${swatches
           .map(
