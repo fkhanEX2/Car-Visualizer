@@ -10,7 +10,7 @@ li{
     cursor: pointer;
 }
 .category-container-list-item.active{
-    background-color:#D8A377;
+    background-color:#4a0606;
     border: none;  
 }
 .category-container-list{
