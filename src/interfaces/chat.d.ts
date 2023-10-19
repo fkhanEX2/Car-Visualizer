@@ -12,3 +12,22 @@ interface IGetChatRequest {
   sceneId: number;
   query: string;
 }
+
+interface IGetActionRequest {
+  sceneId: number;
+  query: string;
+  role: string;
+}
+
+interface IGetActionResponse {
+  response: {
+    intent: string;
+    value: string;
+  };
+}
+
+interface IGetQuestionAnswerRequest {
+  sceneId: number;
+  query: string;
+  role: string;
+}

@@ -1,4 +1,9 @@
-import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
+import {
+  AVAILABLE_COLORS,
+  CHAT_HEADER,
+  INTENTS,
+  PUBSUB_CONSTANTS,
+} from "../../utils/constants";
 import ChatSendIcon from "../../static/images/SendChatIcon.png";
 import downArrow from "../../static/images/downArrow.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
@@ -98,39 +103,84 @@ export const chatSubmitHandler = async (
 ) => {
   try {
     if (chatInputElement.value.trim()) {
-      const { data } = await ChatService.getChatReply({
+      chatSubmitButton.setAttribute("disabled", "true");
+      const { response } = await ChatService.getAction({
         query: chatInputElement.value.trim(),
         sceneId: localStorage.getCurrentSceneId(),
+        role: "user",
       });
+      let chatQues = chatInputElement.value.trim();
+      let chatAns = colorCheck(response.value)
+        ? "Yeah sure!"
+        : "Currently Unavailable";
+      if (response.intent === INTENTS.CAR_INFO_QUERY) {
+        const res = await ChatService.getQuestionAnswer({
+          query: chatInputElement.value.trim(),
+          sceneId: localStorage.getCurrentSceneId(),
+          role: "user",
+        });
+        chatAns = res.toString();
+      }
       chatInputElement.value = "";
-      chatSubmitButton.setAttribute("disabled", "true");
       pubsub.publish(PUBSUB_CONSTANTS.CHAT_QUERY_RESOLVED, {
-        query: data.query,
-        answer: data.answer,
-        id: data.id,
+        query: chatQues,
+        answer: chatAns,
+        id: 1,
       });
-      if (data.selection) {
-        const { category, categoryId, swatchId, swatchName } = data.selection;
-        pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
-          categoryId,
-          categoryName: category,
-          swatchId,
-          swatchName,
-        } as ISwatchDetail);
-        const swatchesLi = $queryAll("ul.swatch-category-list li");
-        const activeCtaegory = $query(`.category-container-list-item.active`);
-        if (
-          activeCtaegory &&
-          Number(activeCtaegory.getAttribute("data-category-id")) === categoryId
-        ) {
-          selectCurrentSwatch(
+
+      if (response.intent !== INTENTS.CAR_INFO_QUERY) {
+        const { category, categoryId, swatchId, swatchName } =
+          getSelectionUponChat({ response });
+
+        if (category && categoryId && swatchId && swatchName) {
+          pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
             categoryId,
-            swatchesLi as NodeListOf<HTMLElement>
-          );
+            categoryName: category,
+            swatchId,
+            swatchName,
+          } as ISwatchDetail);
+          const swatchesLi = $queryAll("ul.swatch-category-list li");
+          const activeCtaegory = $query(`.category-container-list-item.active`);
+          if (
+            activeCtaegory &&
+            Number(activeCtaegory.getAttribute("data-category-id")) ===
+              categoryId
+          ) {
+            selectCurrentSwatch(
+              categoryId,
+              swatchesLi as NodeListOf<HTMLElement>
+            );
+          }
         }
       }
     }
   } catch (err: any) {
     console.log(err);
   }
+};
+
+export const getSelectionUponChat = ({
+  response,
+}: IGetActionResponse): IStorageSelection => {
+  const currentSceneId = localStorage.getCurrentSceneId();
+  const { value, intent } = response;
+  const { categories } = cacheStorage.storage.visualizer.scenes.find(
+    (scene) => scene.id === currentSceneId
+  )!;
+  const data = categories[0].swatches.find(
+    (swatch) => swatch.name.toLowerCase() === value.toLowerCase()
+  );
+  if (data) {
+    return {
+      category: categories[0].name,
+      categoryId: categories[0].id,
+      swatchId: data.id,
+      swatchName: data.name,
+    };
+  }
+  return {} as IStorageSelection;
+};
+
+export const colorCheck = (color: string) => {
+  return AVAILABLE_COLORS.includes(color.toLowerCase());
 };

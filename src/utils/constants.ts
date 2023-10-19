@@ -11,4 +11,11 @@ export enum PUBSUB_CONSTANTS {
   CHAT_QUERY_RESOLVED = "chatQueryResolved",
 }
 
+export enum INTENTS {
+  CHANGE_CAR_COLOR = "change_car_color",
+  CAR_INFO_QUERY = "car_info_query",
+}
+
 export const CHAT_HEADER = "Chat";
+
+export const AVAILABLE_COLORS = ["blue", "white", "black", "red"];

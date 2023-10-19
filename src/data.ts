@@ -69,7 +69,7 @@ export const DATA: IVisualizer = {
           swatches: [
             {
               id: 2801,
-              name: "Color 1",
+              name: "Black",
               isSelected: true,
               path: Scene1Category1Swatch1,
               thumbnailPath: Swatch,
@@ -78,7 +78,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2802,
-              name: "Color 2",
+              name: "Blue",
               isSelected: false,
               path: Scene1Category1Swatch2,
               thumbnailPath: Swatch,
@@ -87,7 +87,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2803,
-              name: "Color 3",
+              name: "Red",
               isSelected: false,
               path: Scene1Category1Swatch3,
               thumbnailPath: Swatch,
@@ -96,7 +96,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2804,
-              name: "Color 4",
+              name: "White",
               isSelected: false,
               path: Scene1Category1Swatch4,
               thumbnailPath: Swatch,
@@ -214,7 +214,7 @@ export const DATA: IVisualizer = {
           swatches: [
             {
               id: 2808,
-              name: "Color 1",
+              name: "Black",
               isSelected: true,
               path: Scene2Category1Swatch1,
               thumbnailPath: Swatch,
@@ -223,7 +223,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2809,
-              name: "Color 2",
+              name: "Blue",
               isSelected: false,
               path: Scene2Category1Swatch2,
               thumbnailPath: Swatch,
@@ -232,7 +232,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2810,
-              name: "Color 3",
+              name: "Red",
               isSelected: false,
               path: Scene2Category1Swatch3,
               thumbnailPath: Swatch,
@@ -241,7 +241,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2811,
-              name: "Color 4",
+              name: "White",
               isSelected: false,
               path: Scene2Category1Swatch4,
               thumbnailPath: Swatch,
@@ -320,7 +320,7 @@ export const DATA: IVisualizer = {
           swatches: [
             {
               id: 2812,
-              name: "Color 1",
+              name: "Black",
               isSelected: true,
               path: Scene3Category1Swatch1,
               thumbnailPath: Swatch,
@@ -329,7 +329,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2813,
-              name: "Color 2",
+              name: "Blue",
               isSelected: false,
               path: Scene3Category1Swatch2,
               thumbnailPath: Swatch,
@@ -338,7 +338,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2814,
-              name: "Color 3",
+              name: "Red",
               isSelected: false,
               path: Scene3Category1Swatch3,
               thumbnailPath: Swatch,
@@ -347,7 +347,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2815,
-              name: "Color 4",
+              name: "White",
               isSelected: false,
               path: Scene3Category1Swatch4,
               thumbnailPath: Swatch,
@@ -465,7 +465,7 @@ export const DATA: IVisualizer = {
           swatches: [
             {
               id: 2819,
-              name: "Color 1",
+              name: "Black",
               isSelected: true,
               path: Scene4Category1Swatch1,
               thumbnailPath: Swatch,
@@ -474,7 +474,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2820,
-              name: "Color 2",
+              name: "Blue",
               isSelected: false,
               path: Scene4Category1Swatch2,
               thumbnailPath: Swatch,
@@ -483,7 +483,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2821,
-              name: "Color 3",
+              name: "Red",
               isSelected: false,
               path: Scene4Category1Swatch3,
               thumbnailPath: Swatch,
@@ -492,7 +492,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2822,
-              name: "Color 4",
+              name: "White",
               isSelected: false,
               path: Scene4Category1Swatch4,
               thumbnailPath: Swatch,
@@ -610,7 +610,7 @@ export const DATA: IVisualizer = {
           swatches: [
             {
               id: 2826,
-              name: "Color 1",
+              name: "Black",
               isSelected: true,
               path: Scene5Category1Swatch1,
               thumbnailPath: Swatch,
@@ -619,7 +619,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2827,
-              name: "Color 2",
+              name: "Blue",
               isSelected: false,
               path: Scene5Category1Swatch2,
               thumbnailPath: Swatch,
@@ -628,7 +628,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2828,
-              name: "Color 3",
+              name: "Red",
               isSelected: false,
               path: Scene5Category1Swatch3,
               thumbnailPath: Swatch,
@@ -637,7 +637,7 @@ export const DATA: IVisualizer = {
             },
             {
               id: 2829,
-              name: "Color 4",
+              name: "White",
               isSelected: false,
               path: Scene5Category1Swatch4,
               thumbnailPath: Swatch,

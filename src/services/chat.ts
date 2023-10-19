@@ -1,3 +1,4 @@
+import axios from "axios";
 import apiClient from "./apiClient";
 
 const getChatReply = async (reqBody: IGetChatRequest) => {
@@ -18,4 +19,26 @@ const getChatReply = async (reqBody: IGetChatRequest) => {
   };
 };
 
-export const ChatService = { getChatReply };
+const getAction = async (reqObj: IGetActionRequest) => {
+  const { query, role } = reqObj;
+  const { data } = await axios.post<IGetActionResponse>(
+    "http://172.17.1.229:8000/get_action",
+    {
+      messages: [{ content: query, role }],
+    }
+  );
+  return data;
+};
+
+const getQuestionAnswer = async (reqObj: IGetQuestionAnswerRequest) => {
+  const { query, role } = reqObj;
+  const { data } = await axios.post<String>(
+    "http://172.17.1.229:8000/ask_question",
+    {
+      messages: [{ content: query, role }],
+    }
+  );
+  return data;
+};
+
+export const ChatService = { getChatReply, getAction, getQuestionAnswer };
