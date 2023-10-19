@@ -1,17 +1,17 @@
-.swatch-category{
-    top: 60px;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    gap: 10px;
+.swatch-category {
+  top: 60px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 10px;
 }
-.swatch-category img{
-    width: 20px;
-    height: 20px;
+.swatch-category img {
+  width: 20px;
+  height: 20px;
 }
 .swatch-category-list {
-display: flex;
+  display: flex;
   gap: 20px;
   top: 50px;
 }
@@ -27,7 +27,7 @@ display: flex;
   border-radius: 10px;
 }
 .swatch-container-list-item img {
-    border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
   width: 124px;
   height: 90px;
 }
@@ -37,9 +37,8 @@ display: flex;
 .swatch-category.hide {
   display: none;
 }
-.swatch-container-close{
-     top: 41px;
-   left: 623px;
-   cursor: pointer;
-
+.swatch-container-close {
+  top: 41px;
+  left: 623px;
+  cursor: pointer;
 }

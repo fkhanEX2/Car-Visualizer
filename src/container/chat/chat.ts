@@ -60,7 +60,7 @@ export const renderChat = (chats: IQuesAns[]) => {
             </div>
             <div class="chat-input-container">
                 <input type="text" class="chat-input" placeholder="Type your message...">
-                <button class="chat-submit disable" disabled>
+                <button class="chat-submit disable">
                     <img src=${ChatSendIcon}/>
                 </button>
             </div>
@@ -87,10 +87,8 @@ export const attachChatSubmitEvent = () => {
   if (chatInputField && chatSubmitButton) {
     chatInputField.addEventListener("input", () => {
       if ((chatInputField as HTMLInputElement).value.trim() !== "") {
-        chatSubmitButton.removeAttribute("disabled");
         chatSubmitButton.classList.remove("disable");
       } else {
-        chatSubmitButton.setAttribute("disabled", "true");
         chatSubmitButton.classList.add("disable");
       }
     });
@@ -110,11 +108,11 @@ export const chatSubmitHandler = async (
 ) => {
   try {
     if (chatInputElement.value.trim()) {
-      chatSubmitButton.setAttribute("disabled", "true");
+      const sceneId = localStorage.getCurrentSceneId();
       chatSubmitButton.classList.add("disable");
       const { response } = await ChatService.getAction({
         query: chatInputElement.value.trim(),
-        sceneId: localStorage.getCurrentSceneId(),
+        sceneId,
         role: "user",
       });
       let chatQues = chatInputElement.value.trim();
@@ -124,7 +122,7 @@ export const chatSubmitHandler = async (
       if (response.intent === INTENTS.CAR_INFO_QUERY) {
         const res = await ChatService.getQuestionAnswer({
           query: chatInputElement.value.trim(),
-          sceneId: localStorage.getCurrentSceneId(),
+          sceneId,
           role: "user",
         });
         chatAns = res.toString();
@@ -135,31 +133,8 @@ export const chatSubmitHandler = async (
         answer: chatAns,
         id: 1,
       });
-
       if (response.intent !== INTENTS.CAR_INFO_QUERY) {
-        const { category, categoryId, swatchId, swatchName } =
-          getSelectionUponChat({ response });
-
-        if (category && categoryId && swatchId && swatchName) {
-          pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
-            categoryId,
-            categoryName: category,
-            swatchId,
-            swatchName,
-          } as ISwatchDetail);
-          const swatchesLi = $queryAll("ul.swatch-category-list li");
-          const activeCtaegory = $query(`.category-container-list-item.active`);
-          if (
-            activeCtaegory &&
-            Number(activeCtaegory.getAttribute("data-category-id")) ===
-              categoryId
-          ) {
-            selectCurrentSwatch(
-              categoryId,
-              swatchesLi as NodeListOf<HTMLElement>
-            );
-          }
-        }
+        updateSceneSelections({ response });
       }
     }
   } catch (err: any) {
@@ -191,4 +166,26 @@ export const getSelectionUponChat = ({
 
 export const colorCheck = (color: string) => {
   return AVAILABLE_COLORS.includes(color.toLowerCase());
+};
+
+export const updateSceneSelections = ({ response }: IGetActionResponse) => {
+  const { category, categoryId, swatchId, swatchName } = getSelectionUponChat({
+    response,
+  });
+  if (swatchId) {
+    pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
+      categoryId,
+      categoryName: category,
+      swatchId,
+      swatchName,
+    } as ISwatchDetail);
+    const swatchesLi = $queryAll("ul.swatch-category-list li");
+    const activeCtaegory = $query(`.category-container-list-item.active`);
+    if (
+      activeCtaegory &&
+      Number(activeCtaegory.getAttribute("data-category-id")) === categoryId
+    ) {
+      selectCurrentSwatch(categoryId, swatchesLi as NodeListOf<HTMLElement>);
+    }
+  }
 };

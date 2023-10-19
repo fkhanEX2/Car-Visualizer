@@ -1,50 +1,39 @@
-# ---- Build Stage ----
+# Use the official Node.js image as the base image
 FROM node:18-alpine AS builder
 
-# Create a group and user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-
-# Set the working directory to /app
+# Create a working directory for the application
 WORKDIR /app
 
-# Install global packages
-RUN npm install -g npm
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Copy package files and set permissions
-COPY --chown=appuser:appgroup package*.json ./
-RUN chown -R appuser:appgroup /app
-USER appuser
-RUN npm install --force
+# Install dependencies
+RUN npm install -f
 
-# Switch back to root to copy rest of the application code
-USER root
-COPY --chown=appuser:appgroup . .
-USER appuser
+# Copy the rest of the application files
+COPY . .
 
-# Build the React app
+# Build TypeScript files
 RUN npm run build
 
-# ---- Run Stage ----
-FROM nginx:1.15.2-alpine
+# Remove development dependencies
+RUN npm prune --production
 
-# Copy build folder from builder stage
-COPY --from=builder --chown=appuser:appgroup /app/build /usr/share/nginx/html/
+# ---- Production Stage ----
+FROM node:18-alpine
 
-# Nginx config
-# (You would have your Nginx config files ready as per the provided example)
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
+# Create a new working directory
+WORKDIR /app
 
-# Copy .env file and shell script to container
-WORKDIR /usr/share/nginx/html
-COPY ./env.sh .
-COPY .env .
+# Copy only necessary files from the builder stage
+COPY --from=builder /app/dist /app
+COPY --from=builder /app/node_modules /app/node_modules
 
-# Make our shell script executable
-RUN chmod +x env.sh
+# Set environment variables if necessary
+# ENV NODE_ENV=production
 
-# Expose port 80 for the container (or any other port you want your app to run on)
-EXPOSE 80
+# Expose the port your app will run on
+EXPOSE 3010
 
-# Start Nginx server and set environment variables
-CMD ["/bin/sh", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]
+# Command to run your application
+CMD ["node", "bundle.js"]
