@@ -4,7 +4,8 @@ import {
   INTENTS,
   PUBSUB_CONSTANTS,
 } from "../../utils/constants";
-import ChatSendIcon from "../../static/images/SendChatIcon.png";
+import ChatSendIcon from "../../static/images/ChatSendIcon.png";
+import user from "../../static/images/user.png";
 import downArrow from "../../static/images/downArrow.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
@@ -34,12 +35,14 @@ export const loadChat = (container: string) => {
 
 export const renderQuery = ({ answer, query, id }: IQuesAns) => {
   return `
-  <li class="chat-list-item query-${id}">
-    ${query}
-  </li>
-  <li class="chat-list-item answer-${id}">
-    ${answer}
-  </li>`;
+   <div class="chat-list-item query-${id}">
+  <img src=${user}/>
+    <p>${query}</p>
+  </div>
+  <div class="chat-list-item answer-${id}">
+   <img src=${user}/>
+    <p>${answer}</p>
+  </div>`;
 };
 
 export const renderChat = (chats: IQuesAns[]) => {
@@ -53,7 +56,7 @@ export const renderChat = (chats: IQuesAns[]) => {
             <ul class="chat-list">
                 ${chats.map((chat) => renderQuery(chat)).join("")}
             </ul>
-            <div>
+            <div class="chat-input-container">
                 <input type="text" class="chat-input" placeholder="Type your message...">
                 <button class="chat-submit" disabled>
                     <img src=${ChatSendIcon}/>
@@ -110,7 +113,7 @@ export const chatSubmitHandler = async (
         role: "user",
       });
       let chatQues = chatInputElement.value.trim();
-      let chatAns = colorCheck(response.value)
+      let chatAns = colorCheck(response.value.toString())
         ? "Yeah sure!"
         : "Currently Unavailable";
       if (response.intent === INTENTS.CAR_INFO_QUERY) {

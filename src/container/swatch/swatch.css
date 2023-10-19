@@ -1,20 +1,23 @@
+
 .swatch-category-list {
-  display: flex;
+display: flex;
   gap: 20px;
   position: absolute;
-  bottom: 10px;
+  top: 50px;
 }
 .swatch-container-list-item {
   background-color: black;
   color: #fff;
   font-size: 12px;
   cursor: pointer;
+  border-radius: 10px;
 }
 .swatch-container-list-item.active {
   border: 2px solid #fff;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
 }
 .swatch-container-list-item img {
+    border-radius: 8px 8px 0 0;
   width: 124px;
   height: 90px;
 }
@@ -23,4 +26,11 @@
 }
 .swatch-category.hide {
   display: none;
+}
+.swatch-container-close{
+   position: absolute;
+   top: 41px;
+   left: 623px;
+   cursor: pointer;
+
 }

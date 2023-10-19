@@ -11,9 +11,13 @@
 }
 
 .chat-container{
+  background-color: #000;
+  z-index: 1;
   position: absolute;
   right: 0;
   bottom: 0;
+  padding: 10px;
+  border-radius: 10px 0 0 0;
 }
 .chat-collapse-icon{
   width: 15px;
@@ -27,11 +31,49 @@
   cursor: pointer;
   font-size: 14px;
   padding: 5px 10px;
-  background-color: #000;
+  /* background-color: #000; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
   width: 250px;
-  border-radius: 10px 0 0 0;
+ 
+}
+.chat-list{
+  margin-left: -30px;
+}
+.chat-body{
+  color: #fff;
+  width: 250px;
+}
+.chat-list-item{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+.chat-list-item img{
+  width: 30px;
+  height: 30px;
+}
+.chat-input-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    gap: 15px;
+    background: #31302F;
+    border-radius: 1000px;
+    color: #fff;
+}
+.chat-input{
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+.chat-input-container .chat-submit{
+  background-color: transparent;
+border: none;
+cursor: pointer;
 }
