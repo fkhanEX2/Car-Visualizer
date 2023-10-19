@@ -53,12 +53,14 @@ export const renderChat = (chats: IQuesAns[]) => {
             <img class="chat-collapse-icon rotate" src=${downArrow}/>
         </div>
         <div class="chat-body hidden">
-            <ul class="chat-list">
-                ${chats.map((chat) => renderQuery(chat)).join("")}
-            </ul>
+            <div class="chat-list-container">
+              <ul class="chat-list">
+                  ${chats.map((chat) => renderQuery(chat)).join("")}
+              </ul>
+            </div>
             <div class="chat-input-container">
                 <input type="text" class="chat-input" placeholder="Type your message...">
-                <button class="chat-submit" disabled>
+                <button class="chat-submit disable" disabled>
                     <img src=${ChatSendIcon}/>
                 </button>
             </div>
@@ -86,8 +88,10 @@ export const attachChatSubmitEvent = () => {
     chatInputField.addEventListener("input", () => {
       if ((chatInputField as HTMLInputElement).value.trim() !== "") {
         chatSubmitButton.removeAttribute("disabled");
+        chatSubmitButton.classList.remove("disable");
       } else {
         chatSubmitButton.setAttribute("disabled", "true");
+        chatSubmitButton.classList.add("disable");
       }
     });
 
@@ -107,6 +111,7 @@ export const chatSubmitHandler = async (
   try {
     if (chatInputElement.value.trim()) {
       chatSubmitButton.setAttribute("disabled", "true");
+      chatSubmitButton.classList.add("disable");
       const { response } = await ChatService.getAction({
         query: chatInputElement.value.trim(),
         sceneId: localStorage.getCurrentSceneId(),
