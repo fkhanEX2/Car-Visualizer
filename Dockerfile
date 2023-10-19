@@ -1,39 +1,26 @@
-# Use the official Node.js image as the base image
+# Use an official Node.js runtime as a parent image
 FROM node:18-alpine AS builder
 
-# Create a working directory for the application
-WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install dependencies
+# Install project dependencies
 RUN npm install -f
 
-# Copy the rest of the application files
+# Copy the rest of the application files to the working directory
 COPY . .
 
-# Build TypeScript files
+# Build the TypeScript code using webpack
 RUN npm run build
 
 # Remove development dependencies
 RUN npm prune --production
 
-# ---- Production Stage ----
-FROM node:18-alpine
-
-# Create a new working directory
-WORKDIR /app
-
-# Copy only necessary files from the builder stage
-COPY --from=builder /app/dist /app
-COPY --from=builder /app/node_modules /app/node_modules
-
-# Set environment variables if necessary
-# ENV NODE_ENV=production
-
-# Expose the port your app will run on
+# Expose the port the app runs on
 EXPOSE 3010
 
-# Command to run your application
-CMD ["node", "bundle.js"]
+# Define the command to run your application
+CMD ["npm", "start"]
