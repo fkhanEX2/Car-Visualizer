@@ -1,18 +1,18 @@
 import apiClient from "./apiClient";
 
 const getChatReply = async (reqBody: IGetChatRequest) => {
-  //   const res = apiClient.post<IResponseWrapper<IGetChatResponse>>("", reqBody);
+  //   const res = await apiClient.post<IResponseWrapper<IGetChatResponse>>("", reqBody);
   //   return res;
   return {
     data: {
       selection: {
-        category: "Category 3",
-        categoryId: 4153,
-        swatchId: 12221,
-        swatchName: "Option 3",
+        category: "Color",
+        categoryId: 3801,
+        swatchId: 2802,
+        swatchName: "Color 2",
       },
-      query: "Can you change the color of the cabinet",
-      answer: "Yeah Sure.",
+      query: "Can you change the color of car to blue",
+      answer: "Yeah Sure!",
       id: 1,
     } as IGetChatResponse,
   };

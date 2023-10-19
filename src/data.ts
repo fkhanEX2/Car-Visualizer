@@ -1,400 +1,5 @@
-// import BaseImage from "./static/images/Scene-1.jpg";
-// import Cat1Swa1 from "./static/images/S1C1S1.png";
-// import Cat1Swa2 from "./static/images/S1C1S2.png";
-// import Cat1Swa3 from "./static/images/S1C1S3.png";
-// import Cat2Swa1 from "./static/images/S1C2S1.png";
-// import Cat2Swa2 from "./static/images/S1C2S2.png";
-// import Cat2Swa3 from "./static/images/S1C2S3.png";
-// import Cat3Swa1 from "./static/images/S1C3S1.png";
-// import Cat3Swa2 from "./static/images/S1C3S2.png";
-// import Cat3Swa3 from "./static/images/S1C3S3.png";
-// import Cat1Tbn1 from "./static/images/S1C1T1.png";
-// import Cat1Tbn2 from "./static/images/S1C1T2.png";
-// import Cat1Tbn3 from "./static/images/S1C1T3.png";
-// import Cat2Tbn1 from "./static/images/S1C2T1.png";
-// import Cat2Tbn2 from "./static/images/S1C2T2.png";
-// import Cat2Tbn3 from "./static/images/S1C2T3.png";
-// import Cat3Tbn1 from "./static/images/S1C3T1.png";
-// import Cat3Tbn2 from "./static/images/S1C3T2.png";
-// import Cat3Tbn3 from "./static/images/S1C3T3.png";
-// import Hotspot from "./static/images/hotspsot.png";
-// import BaseImage2 from "./static/images/Scene-2.jpg";
-// import BaseImage3 from "./static/images/Scene-3.jpg";
-// import Sce3Cat1Swa1 from "./static/images/S3C1S1.png";
-// import Sce3Cat1Swa2 from "./static/images/S3C1S2.png";
-// import Sce3Cat1Swa3 from "./static/images/S3C1S3.png";
-// import Sce3Cat2Swa1 from "./static/images/S3C2S1.png";
-// import Sce3Cat2Swa2 from "./static/images/S3C2S2.png";
-// import Sce3Cat2Swa3 from "./static/images/S3C2S3.png";
-// import Sce3Cat3Swa1 from "./static/images/S3C3S1.png";
-// import Sce3Cat3Swa2 from "./static/images/S3C3S2.png";
-// import Sce3Cat3Swa3 from "./static/images/S3C3S3.png";
-// import Sce3Cat1Tbn1 from "./static/images/S3C1T1.png";
-// import Sce3Cat1Tbn2 from "./static/images/S3C1T2.png";
-// import Sce3Cat1Tbn3 from "./static/images/S3C1T3.png";
-// import Sce3Cat2Tbn1 from "./static/images/S3C2T1.png";
-// import Sce3Cat2Tbn2 from "./static/images/S3C2T2.png";
-// import Sce3Cat2Tbn3 from "./static/images/S3C2T3.png";
-// import Sce3Cat3Tbn1 from "./static/images/S3C3T1.png";
-// import Sce3Cat3Tbn2 from "./static/images/S3C3T2.png";
-// import Sce3Cat3Tbn3 from "./static/images/S3C3T3.png";
-
-// export const data: IVisualizer = {
-//   name: "Visualizer 1",
-//   id: 2691,
-//   scenes: [
-//     {
-//       id: 4844,
-//       name: "Scene 1",
-//       baseImage: BaseImage,
-//       initialPosition: { x: 0, y: 0, z: 0 },
-//       initialRotation: { x: 0, y: -90, z: 0 },
-//       isDefault: true,
-//       categories: [
-//         {
-//           id: 4151,
-//           name: "Category 1",
-//           initialView: {
-//             id: 5719,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12213,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Cat1Swa1,
-//               thumbnailPath: Cat1Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12214,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Cat1Swa2,
-//               thumbnailPath: Cat1Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12215,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Cat1Swa3,
-//               thumbnailPath: Cat1Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//         {
-//           id: 4152,
-//           name: "Category 2",
-//           initialView: {
-//             id: 5720,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12216,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Cat2Swa1,
-//               thumbnailPath: Cat2Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12217,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Cat2Swa2,
-//               thumbnailPath: Cat2Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12218,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Cat2Swa3,
-//               thumbnailPath: Cat2Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//         {
-//           id: 4153,
-//           name: "Category 3",
-//           initialView: {
-//             id: 5720,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12219,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Cat3Swa1,
-//               thumbnailPath: Cat3Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12220,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Cat3Swa2,
-//               thumbnailPath: Cat3Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12221,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Cat3Swa3,
-//               thumbnailPath: Cat3Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//       ],
-//       initialView: {
-//         id: 5706,
-//         yaw: 0,
-//         pitch: 0,
-//         fov: 75,
-//       },
-//       hotspots: [
-//         {
-//           id: 3624,
-//           yaw: 0,
-//           pitch: 0,
-//           thumbnail: Hotspot,
-//           header: "Scene 2",
-//           sceneId: 4845,
-//           initialPosition: { x: 4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//         {
-//           id: 3625,
-//           thumbnail: Hotspot,
-//           yaw: 0.8,
-//           pitch: 0,
-//           header: "Scene 3",
-//           sceneId: 4846,
-//           initialPosition: { x: -4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//       ],
-//     },
-//     {
-//       id: 4845,
-//       name: "Scene 2",
-//       baseImage: BaseImage2,
-//       initialPosition: { x: 0, y: 0, z: 0 },
-//       initialRotation: { x: 0, y: -90, z: 0 },
-//       isDefault: false,
-//       categories: [],
-//       initialView: {
-//         id: 5706,
-//         yaw: 0,
-//         pitch: 0,
-//         fov: 75,
-//       },
-//       hotspots: [
-//         {
-//           id: 3626,
-//           yaw: 0,
-//           pitch: 0,
-//           thumbnail: Hotspot,
-//           header: "Scene 1",
-//           sceneId: 4844,
-//           initialPosition: { x: 4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//         {
-//           id: 3627,
-//           thumbnail: Hotspot,
-//           yaw: 0.8,
-//           pitch: 0,
-//           header: "Scene 3",
-//           sceneId: 4846,
-//           initialPosition: { x: -4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//       ],
-//     },
-//     {
-//       id: 4846,
-//       name: "Scene 3",
-//       baseImage: BaseImage3,
-//       initialPosition: { x: 0, y: 0, z: 0 },
-//       initialRotation: { x: 0, y: -90, z: 0 },
-//       isDefault: false,
-//       categories: [
-//         {
-//           id: 4151,
-//           name: "Category 1",
-//           initialView: {
-//             id: 5719,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12213,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Sce3Cat1Swa1,
-//               thumbnailPath: Sce3Cat1Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12214,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Sce3Cat1Swa2,
-//               thumbnailPath: Sce3Cat1Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12215,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Sce3Cat1Swa3,
-//               thumbnailPath: Sce3Cat1Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//         {
-//           id: 4152,
-//           name: "Category 2",
-//           initialView: {
-//             id: 5720,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12216,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Sce3Cat2Swa1,
-//               thumbnailPath: Sce3Cat2Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12217,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Sce3Cat2Swa2,
-//               thumbnailPath: Sce3Cat2Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12218,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Sce3Cat2Swa3,
-//               thumbnailPath: Sce3Cat2Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//         {
-//           id: 4153,
-//           name: "Category 3",
-//           initialView: {
-//             id: 5720,
-//             yaw: 0.54,
-//             pitch: 0.09,
-//             fov: 61.94,
-//           },
-//           swatches: [
-//             {
-//               id: 12219,
-//               name: "Option 1",
-//               isSelected: true,
-//               path: Sce3Cat3Swa1,
-//               thumbnailPath: Sce3Cat3Tbn1,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12220,
-//               name: "Option 2",
-//               isSelected: false,
-//               path: Sce3Cat3Swa2,
-//               thumbnailPath: Sce3Cat3Tbn2,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//             {
-//               id: 12221,
-//               name: "Option 3",
-//               isSelected: false,
-//               path: Sce3Cat3Swa3,
-//               thumbnailPath: Sce3Cat3Tbn3,
-//               initialPosition: { x: 0, y: 0, z: 0 },
-//               initialRotation: { x: 0, y: -90, z: 0 },
-//             },
-//           ],
-//         },
-//       ],
-//       initialView: {
-//         id: 5706,
-//         yaw: 0,
-//         pitch: 0,
-//         fov: 75,
-//       },
-//       hotspots: [
-//         {
-//           id: 3628,
-//           yaw: 0,
-//           pitch: 0,
-//           thumbnail: Hotspot,
-//           header: "Scene 1",
-//           sceneId: 4844,
-//           initialPosition: { x: 4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//         {
-//           id: 3629,
-//           thumbnail: Hotspot,
-//           yaw: 0.8,
-//           pitch: 0,
-//           header: "Scene 2",
-//           sceneId: 4845,
-//           initialPosition: { x: -4, y: 0, z: -3 },
-//           initialRotation: { x: 0, y: 0, z: 0 },
-//         },
-//       ],
-//     },
-//   ],
-// };
-
-import Hotspot from "./static/images/hotspsot.png";
-import Sce3Cat3Tbn3 from "./static/images/S3C3T3.png";
+import Swatch from "./static/images/S3C3T3.png";
+import Hotspot from "./static/images/hotspotIcon.png";
 import {
   Scene1BaseImage,
   Scene1Category1Swatch1,
@@ -467,7 +72,7 @@ export const DATA: IVisualizer = {
               name: "Color 1",
               isSelected: true,
               path: Scene1Category1Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -476,7 +81,7 @@ export const DATA: IVisualizer = {
               name: "Color 2",
               isSelected: false,
               path: Scene1Category1Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -485,7 +90,7 @@ export const DATA: IVisualizer = {
               name: "Color 3",
               isSelected: false,
               path: Scene1Category1Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -494,7 +99,7 @@ export const DATA: IVisualizer = {
               name: "Color 4",
               isSelected: false,
               path: Scene1Category1Swatch4,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -515,7 +120,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 1",
               isSelected: true,
               path: Scene1Category2Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -524,7 +129,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 2",
               isSelected: false,
               path: Scene1Category2Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -533,7 +138,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 3",
               isSelected: false,
               path: Scene1Category2Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -612,7 +217,7 @@ export const DATA: IVisualizer = {
               name: "Color 1",
               isSelected: true,
               path: Scene2Category1Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -621,7 +226,7 @@ export const DATA: IVisualizer = {
               name: "Color 2",
               isSelected: false,
               path: Scene2Category1Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -630,7 +235,7 @@ export const DATA: IVisualizer = {
               name: "Color 3",
               isSelected: false,
               path: Scene2Category1Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -639,7 +244,7 @@ export const DATA: IVisualizer = {
               name: "Color 4",
               isSelected: false,
               path: Scene2Category1Swatch4,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -718,7 +323,7 @@ export const DATA: IVisualizer = {
               name: "Color 1",
               isSelected: true,
               path: Scene3Category1Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -727,7 +332,7 @@ export const DATA: IVisualizer = {
               name: "Color 2",
               isSelected: false,
               path: Scene3Category1Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -736,7 +341,7 @@ export const DATA: IVisualizer = {
               name: "Color 3",
               isSelected: false,
               path: Scene3Category1Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -745,7 +350,7 @@ export const DATA: IVisualizer = {
               name: "Color 4",
               isSelected: false,
               path: Scene3Category1Swatch4,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -766,7 +371,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 1",
               isSelected: true,
               path: Scene3Category2Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -775,7 +380,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 2",
               isSelected: false,
               path: Scene3Category2Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -784,7 +389,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 3",
               isSelected: false,
               path: Scene3Category2Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -863,7 +468,7 @@ export const DATA: IVisualizer = {
               name: "Color 1",
               isSelected: true,
               path: Scene4Category1Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -872,7 +477,7 @@ export const DATA: IVisualizer = {
               name: "Color 2",
               isSelected: false,
               path: Scene4Category1Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -881,7 +486,7 @@ export const DATA: IVisualizer = {
               name: "Color 3",
               isSelected: false,
               path: Scene4Category1Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -890,7 +495,7 @@ export const DATA: IVisualizer = {
               name: "Color 4",
               isSelected: false,
               path: Scene4Category1Swatch4,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -911,7 +516,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 1",
               isSelected: true,
               path: Scene4Category2Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -920,7 +525,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 2",
               isSelected: false,
               path: Scene4Category2Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -929,7 +534,7 @@ export const DATA: IVisualizer = {
               name: "Alloy 3",
               isSelected: false,
               path: Scene4Category2Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -970,7 +575,7 @@ export const DATA: IVisualizer = {
           thumbnail: Hotspot,
           header: "Scene 3",
           sceneId: 4803,
-          initialPosition: {  x: 9, y: -3, z: -12 },
+          initialPosition: { x: 9, y: -3, z: -12 },
           initialRotation: { x: 0, y: 0, z: 0 },
         },
         {
@@ -1008,7 +613,7 @@ export const DATA: IVisualizer = {
               name: "Color 1",
               isSelected: true,
               path: Scene5Category1Swatch1,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -1017,7 +622,7 @@ export const DATA: IVisualizer = {
               name: "Color 2",
               isSelected: false,
               path: Scene5Category1Swatch2,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -1026,7 +631,7 @@ export const DATA: IVisualizer = {
               name: "Color 3",
               isSelected: false,
               path: Scene5Category1Swatch3,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },
@@ -1035,7 +640,7 @@ export const DATA: IVisualizer = {
               name: "Color 4",
               isSelected: false,
               path: Scene5Category1Swatch4,
-              thumbnailPath: Sce3Cat3Tbn3,
+              thumbnailPath: Swatch,
               initialPosition: { x: 0, y: 0, z: 0 },
               initialRotation: { x: 0, y: -90, z: 0 },
             },

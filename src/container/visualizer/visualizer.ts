@@ -10,6 +10,7 @@ import { loadPano } from "../pano/pano";
 
 export const loadVisualizerData = async () => {
   try {
+    //skeleton show
     const res = await VisualizerService.getVisualizerData();
     cacheStorage.storage.visualizer = res;
     loadVisualizer();
@@ -23,6 +24,7 @@ export const loadVisualizer = () => {
   loadCacheAndLocalStorage();
   loadPano();
   render();
+  //skeleton hide
 };
 
 export const render = () => {

@@ -105,6 +105,7 @@ export const selectedSwatchClick = ({
   swatchName,
   categoryName,
 }: ISwatchDetail) => {
+  //loader show
   const newSelections: IStorageSelection[] = [
     ...cacheStorage.storage.selections.filter(
       (selection) => selection.categoryId !== categoryId
@@ -127,6 +128,7 @@ export const selectedSwatchClick = ({
       layer.setAttribute("data-swatch-id", swatchId.toString());
     }
   });
+  // loader hide
 };
 
 export const swatchClick = (
@@ -152,7 +154,6 @@ export const swatchClick = (
     categoryId,
     categoryName,
   };
-
   pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, swatchDetails);
 };
 

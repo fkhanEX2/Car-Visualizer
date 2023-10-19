@@ -38,7 +38,14 @@ export const addHotspotClickListener = () => {
         "data-scene-id"
       )!;
       localStorage.updateStorage(Number(newSceneId));
+      //skeleton show
       loadVisualizer();
+    });
+    hotspotEntity.addEventListener("mouseenter", (e) => {
+      (e.target as HTMLElement).setAttribute("scale", "1.2 1.2 1.2");
+    });
+    hotspotEntity.addEventListener("mouseleave", (e) => {
+      (e.target as HTMLElement).setAttribute("scale", "1 1 1");
     });
   });
 };

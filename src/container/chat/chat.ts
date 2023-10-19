@@ -1,9 +1,9 @@
 import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
 import CollapseIcon from "../../static/images/collapseArrow.png";
-import ChatSendIcon from "../../static/images/sendChatIcon.png";
+import ChatSendIcon from "../../static/images/SendChatIcon.png";
 import closeIcon from "../../static/images/closeIcon.png";
 import downArrow from "../../static/images/downArrow.png";
-import crossIcon from "../../static/images/crossIcon.png"
+import crossIcon from "../../static/images/crossIcon.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";
@@ -17,7 +17,7 @@ export const loadChat = (container: string) => {
   const visualizerContainer = $id(container);
   const { chats } = cacheStorage.storage;
   if (visualizerContainer) {
-    visualizerContainer.insertAdjacentHTML("beforeend", renderChat(chats));
+    visualizerContainer.insertAdjacentHTML("afterbegin", renderChat(chats));
     attachChatCollapseEvent();
     attachChatSubmitEvent();
     pubsub.subscribe(PUBSUB_CONSTANTS.CHAT_QUERY_RESOLVED, (chat: IQuesAns) => {
