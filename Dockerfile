@@ -13,6 +13,9 @@ RUN npm install -f
 # Copy the rest of the application files to the working directory
 COPY . .
 
+# Set the NODE_ENV environment variable to production
+ENV NODE_ENV=production
+
 # Build the TypeScript code using webpack
 RUN npm run build
 
