@@ -25,9 +25,13 @@ export const loadChat = (container: string) => {
     attachChatSubmitEvent();
     pubsub.subscribe(PUBSUB_CONSTANTS.CHAT_QUERY_RESOLVED, (chat: IQuesAns) => {
       localStorage.setChat(chat);
+      const chatListContainer = $query(".chat-list-container");
       const chatList = $query(".chat-list");
-      if (chatList) {
+      if (chatList && chatListContainer) {
         chatList.insertAdjacentHTML("beforeend", renderQuery(chat));
+        (chatListContainer as Element).scrollTop = (
+          chatListContainer as Element
+        ).scrollHeight;
       }
     });
   }

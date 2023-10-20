@@ -10,7 +10,7 @@
   display: none;
 }
 
-.chat-container{
+.chat-container {
   max-height: 500px;
   background-color: #000;
   z-index: 1;
@@ -20,15 +20,15 @@
   padding: 5px 10px;
   border-radius: 10px 0 0 0;
 }
-.chat-collapse-icon{
+.chat-collapse-icon {
   width: 15px;
   height: 15px;
 }
-.chat-header-icon{
+.chat-header-icon {
   display: flex;
   gap: 20px;
 }
-.chat-header{
+.chat-header {
   cursor: pointer;
   font-size: 14px;
   padding: 5px 10px;
@@ -38,55 +38,71 @@
   justify-content: space-between;
   color: #fff;
   width: 250px;
- 
 }
-.chat-list{
+.chat-list {
   margin-left: -30px;
-  overflow-y:scroll;
+  /* overflow-y:scroll; */
 }
-.chat-body{
+.chat-body {
   color: #fff;
   width: 250px;
 }
-.chat-list-item{
+.chat-list-item {
   display: flex;
   justify-content: flex-start;
   gap: 10px;
   align-items: center;
 }
-.chat-list-item img{
+.chat-list-item img {
   width: 30px;
   height: 30px;
 }
-.chat-input-container{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 5px 10px;
-    gap: 15px;
-    background: #31302F;
-    border-radius: 1000px;
-    color: #fff;
-    margin-top: 10px;
+.chat-input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 10px;
+  gap: 15px;
+  background: #31302f;
+  border-radius: 1000px;
+  color: #fff;
+  margin-top: 10px;
 }
-.chat-input{
+.chat-input {
   background-color: transparent;
   border: none;
   color: #fff;
   width: 100%;
 }
-.chat-input-container .chat-submit{
+.chat-input-container .chat-submit {
   background-color: transparent;
-border: none;
-cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 
-.chat-submit.disable{
+.chat-submit.disable {
   cursor: not-allowed;
 }
-.chat-list-container{
-   height: 140px;
-    max-height: 140px;
-    overflow-y: scroll;
-    padding: 10px 0;
+.chat-list-container {
+  height: 207px;
+  max-height: 250px;
+  overflow-y: scroll;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

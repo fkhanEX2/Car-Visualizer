@@ -19,9 +19,6 @@ ENV NODE_ENV=production
 # Build the TypeScript code using webpack
 RUN npm run build
 
-# Remove development dependencies
-RUN npm prune --production
-
 # Expose the port the app runs on
 EXPOSE 3010
 
