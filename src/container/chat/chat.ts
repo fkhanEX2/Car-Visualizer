@@ -4,9 +4,11 @@ import {
   INTENTS,
   PUBSUB_CONSTANTS,
 } from "../../utils/constants";
-import ChatSendIcon from "../../static/images/ChatSendIcon.png";
-import user from "../../static/images/user.png";
-import downArrow from "../../static/images/downArrow.png";
+import SendIcon from "../../static/images/sendIcon.png";
+import ChatIcon from "../../static/images/chatIcon.png";
+import FrameIcon from "../../static/images/frameIcon.png";
+import UserIcon from "../../static/images/user.png";
+import CollapseIcon from "../../static/images/downArrow.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";
@@ -39,36 +41,42 @@ export const loadChat = (container: string) => {
 
 export const renderQuery = ({ answer, query, id }: IQuesAns) => {
   return `
-   <div class="chat-list-item query-${id}">
-  <img src=${user}/>
-    <p>${query}</p>
-  </div>
-  <div class="chat-list-item answer-${id}">
-   <img src=${user}/>
-    <p>${answer}</p>
-  </div>`;
+    <div class="chat-list-item query-${id}">
+      <img src=${UserIcon}/>
+      <p>${query}</p>
+    </div>
+    <div class="chat-list-item answer-${id}">
+      <img src=${UserIcon}/>
+      <p>${answer}</p>
+    </div>
+  `;
 };
 
 export const renderChat = (chats: IQuesAns[]) => {
   return `
     <div class="chat-container">
-        <div class="chat-header">
-            <p class="chat-heading">${CHAT_HEADER}</p>
-            <img class="chat-collapse-icon rotate" src=${downArrow}/>
+      <div class="chat-header">
+        <img class="chat-icon" src=${ChatIcon}/>
+        <div class="chat-heading">
+          <h3>${CHAT_HEADER}</h3>
+          <p>Voice-Enabled Car Configuration</p>
         </div>
-        <div class="chat-body hidden">
-            <div class="chat-list-container">
-              <ul class="chat-list">
-                  ${chats.map((chat) => renderQuery(chat)).join("")}
-              </ul>
-            </div>
-            <div class="chat-input-container">
-                <input type="text" class="chat-input" placeholder="Type your message...">
-                <button class="chat-submit disable">
-                    <img src=${ChatSendIcon}/>
-                </button>
-            </div>
+        <img class="chat-collapse-icon rotate" src=${CollapseIcon}/>
+      </div>
+      <div class="chat-body hidden">
+        <div class="chat-list-container">
+          <ul class="chat-list">
+            ${chats.map((chat) => renderQuery(chat)).join("")}
+          </ul>
         </div>
+        <div class="chat-input-container">
+          <input type="text" class="chat-input" placeholder="Type your message...">
+          <img class="voice-input" title="This feature is currently unavailable" src=${FrameIcon}/>
+          <button class="chat-submit disable">
+            <img src=${SendIcon}/>  
+          </button>
+        </div>
+      </div>
     </div>
   `;
 };

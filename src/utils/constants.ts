@@ -16,6 +16,6 @@ export enum INTENTS {
   CAR_INFO_QUERY = "car_info_query",
 }
 
-export const CHAT_HEADER = "Chat";
+export const CHAT_HEADER = "Customize with Ease";
 
 export const AVAILABLE_COLORS = ["blue", "white", "black", "red"];
