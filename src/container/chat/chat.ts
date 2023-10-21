@@ -4,7 +4,9 @@ import {
   INTENTS,
   PUBSUB_CONSTANTS,
 } from "../../utils/constants";
-import ChatSendIcon from "../../static/images/ChatSendIcon.png";
+import sendIcon from "../../static/images/sendIcon.png";
+import chatIcon from "../../static/images/chatIcon.png";
+import frameIcon from "../../static/images/frameIcon.png";
 import user from "../../static/images/user.png";
 import downArrow from "../../static/images/downArrow.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
@@ -53,7 +55,11 @@ export const renderChat = (chats: IQuesAns[]) => {
   return `
     <div class="chat-container">
         <div class="chat-header">
-            <p class="chat-heading">${CHAT_HEADER}</p>
+        <img class="chat-icon" src=${chatIcon}/>
+            <div class="chat-heading">
+              <h3>${CHAT_HEADER}</h3>
+              <p>Voice-Enabled Car Configuration</p>
+            </div>
             <img class="chat-collapse-icon rotate" src=${downArrow}/>
         </div>
         <div class="chat-body hidden">
@@ -64,8 +70,10 @@ export const renderChat = (chats: IQuesAns[]) => {
             </div>
             <div class="chat-input-container">
                 <input type="text" class="chat-input" placeholder="Type your message...">
+                <img src=${frameIcon}/>
                 <button class="chat-submit disable">
-                    <img src=${ChatSendIcon}/>
+                    <img src=${sendIcon}/>
+                    
                 </button>
             </div>
         </div>

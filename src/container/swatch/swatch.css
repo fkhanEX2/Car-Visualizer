@@ -1,35 +1,33 @@
 .swatch-category {
-  top: 60px;
+  padding: 30px;
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  gap: 10px;
-}
-.swatch-category img {
-  width: 20px;
-  height: 20px;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+ }
+ .swatch-header-text img{
+  width: 14px;
+  height: 18px;
+ }
+.swatch-container-close {
+  width: 15px;
+  height: 15px;
 }
 .swatch-category-list {
   display: flex;
   gap: 20px;
   top: 50px;
 }
-.swatch-container-list-item {
-  background-color: black;
-  color: #fff;
-  font-size: 12px;
-  cursor: pointer;
-  border-radius: 10px;
-}
 .swatch-container-list-item.active {
-  border: 2px solid #4a0606;
-  border-radius: 10px;
+  border: 2px solid #222;
+  border-radius: 50px;
 }
 .swatch-container-list-item img {
-  border-radius: 8px 8px 0 0;
-  width: 124px;
-  height: 90px;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #212121;
+  cursor: pointer;
 }
 .swatch-container-list-item p {
   padding-left: 10px;
@@ -41,4 +39,31 @@
   top: 41px;
   left: 623px;
   cursor: pointer;
+} 
+.swatch-header{
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #000;
+  margin-bottom: 50px;
+
+}
+.swatch-category-options{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.swatch-header img{
+  cursor: pointer;
+  }
+  .swatch-header-text{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    font-size: 20px;
+  }
+*{
+  margin: 0;
+  padding: 0;
 }

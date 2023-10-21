@@ -3,6 +3,9 @@ import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import { loadSwatches } from "../swatch/swatch";
+import colorIcon from "../../static/images/colorIcon.png";
+import cameraIcon from "../../static/images/cameraIcon.png";
+import wheelIcon from "../../static/images/wheelIcon.png";
 import "./category.css";
 
 export const loadCategory = (currentScene: IScene, container: string) => {
@@ -69,8 +72,14 @@ export const renderCategories = (categories: ICategory[]) => {
                   (
                     category
                   ) => `<li class="category-container-list-item" data-category-id=${category.id} data-category-name="${category.name}">
+                  <img src=${cameraIcon}/>
                   <a name="${category.name}">${category.name}</a>
-              </li>`
+              </li>
+              <li class="category-container-list-item" data-category-id=${category.id} data-category-name="${category.name}">
+                  <img src=${wheelIcon}/>
+                  <a name="${category.name}">${category.name}</a>
+              </li>
+              `
                 )
                 .join("")}
           </ul>
