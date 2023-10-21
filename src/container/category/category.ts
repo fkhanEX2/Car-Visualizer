@@ -69,17 +69,12 @@ export const renderCategories = (categories: ICategory[]) => {
           <ul class="category-container-list">
               ${categories
                 .map(
-                  (
-                    category
-                  ) => `<li class="category-container-list-item" data-category-id=${category.id} data-category-name="${category.name}">
-                  <img src=${cameraIcon}/>
-                  <a name="${category.name}">${category.name}</a>
-              </li>
-              <li class="category-container-list-item" data-category-id=${category.id} data-category-name="${category.name}">
-                  <img src=${wheelIcon}/>
-                  <a name="${category.name}">${category.name}</a>
-              </li>
-              `
+                  (category) => `
+                  <li class="category-container-list-item" data-category-id=${category.id} data-category-name="${category.name}">
+                    <img name="${category.name}" src=${cameraIcon}/>
+                    <a name="${category.name}">${category.name}</a>
+                  </li>
+                  `
                 )
                 .join("")}
           </ul>

@@ -55,10 +55,10 @@
   /* overflow-y:scroll; */
 }
 .chat-body {
- background-color: #fff;
- border-radius: 0 0 10px 10px;
- width: 294px;
- padding: 10px 10px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  width: 294px;
+  padding: 10px 10px;
 }
 .chat-list-item {
   display: flex;
@@ -71,7 +71,7 @@
   height: 30px;
 }
 .chat-input-container {
-  
+
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -101,7 +101,10 @@
   overflow-y: auto;
   padding: 10px 0;
   font-size: 14px;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #eeeeee;
+}
+.voice-input {
+  cursor: not-allowed;
 }
 
 ::-webkit-scrollbar {

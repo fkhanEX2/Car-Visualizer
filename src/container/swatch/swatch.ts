@@ -41,7 +41,10 @@ export const initializeSwatches = (
   if (swatchContainer) {
     swatchContainer.remove();
   }
-  visualizerContainer.insertAdjacentHTML("beforeend", renderSwatches(swatches));
+  visualizerContainer.insertAdjacentHTML(
+    "beforeend",
+    renderSwatches(swatches, categoryName)
+  );
   const swatchCloseButton = $query(".swatch-container-close");
   const newSwatchContainer = $query(
     ".swatch-category",
@@ -170,34 +173,31 @@ export const swatchClick = (
   pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, swatchDetails);
 };
 
-export const renderSwatches = (swatches: ISwatch[]) => {
+export const renderSwatches = (swatches: ISwatch[], categoryName: string) => {
   return `
   <div class="swatch-category hide">
-        <div class="swatch-header">
-              <div class="swatch-header-text">
-                <img class="swatch-container-close" src=${colorBlack}>
-                <p>Color</p>
-             </div>
-               <img class="swatch-container-close" src=${closeIcon}>
-        </div>
-        <div class="swatch-category-options">
-                <h3>Standard</h3>
-                <p>Black</p>
-                <ul class="swatch-category-list">
-        ${swatches
-          .map(
-            (swatch) =>
-            
-              `<li class="swatch-container-list-item ${
+    <div class="swatch-header">
+      <div class="swatch-header-text">
+        <img class="swatch-container-category-icon" src=${colorBlack}>
+        <p>${categoryName}</p>
+      </div>
+      <img class="swatch-container-close" src=${closeIcon}>
+    </div>
+    <div class="swatch-category-options">
+      <ul class="swatch-category-list">
+      ${swatches
+        .map(
+          (swatch) =>
+            `
+              <li class="swatch-container-list-item ${
                 swatch.isSelected ? "active" : ""
               }" data-swatch-id=${swatch.id} data-swatch-name="${swatch.name}">
-                    <img name="${swatch.name}" src="${swatch.thumbnailPath}" />
-            </li>`
-          ) 
-          .join("")}  
-    </ul>
-        </div>
-  
-    
+                <img name="${swatch.name}" src="${swatch.thumbnailPath}" />
+              </li>
+            `
+        )
+        .join("")}  
+      </ul>
+    </div>
   </div>`;
 };
