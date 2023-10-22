@@ -41,3 +41,30 @@ export const getSelections = (sceneId: number) => {
   });
   return selections;
 };
+
+export const getUpdatedSelections = (sceneId: number) => {
+  const scene = cacheStorage.storage.visualizer.scenes.find(
+    (scene) => scene.id === sceneId
+  )!;
+  const { selection: storedSelections } = localStorage.getItem();
+
+  const currentCategoryIds = storedSelections.map((slc) => slc.categoryId);
+
+  let updatedSelections = [...storedSelections] as IStorageSelection[];
+
+  scene.categories.forEach((category) => {
+    if (!currentCategoryIds.includes(category.id)) {
+      category.swatches.forEach((swatch) => {
+        if (swatch.isSelected) {
+          updatedSelections.push({
+            category: category.name,
+            categoryId: category.id,
+            swatchName: swatch.name,
+            swatchId: swatch.id,
+          });
+        }
+      });
+    }
+  });
+  return updatedSelections;
+};

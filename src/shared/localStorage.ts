@@ -1,6 +1,6 @@
 import { INITIAL_PAYLOAD } from "../utils/constants";
 import cacheStorage from "./cacheStorage";
-import { getSelections } from "./common";
+import { getSelections, getUpdatedSelections } from "./common";
 
 export class LocalStorage {
   key: string;
@@ -58,7 +58,8 @@ export class LocalStorage {
     const { name } = cacheStorage.storage.visualizer.scenes.find(
       (scene) => scene.id === sceneId
     )!;
-    const selections = getSelections(sceneId);
+    // console.log(updateSelections(sceneId));
+    const selections = getUpdatedSelections(sceneId);
     const data = this.getItem();
     this.setItem({
       ...data,

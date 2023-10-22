@@ -90,28 +90,31 @@ export const loadLayers = () => {
     const { categories } = visualizer.scenes.find(
       (scene) => scene.id === currentSceneId
     )!;
-    const { id: catId, swatches } = categories.find(
+    const category = categories.find(
       (category) => category.id === selection.categoryId
-    )!;
-    const {
-      path: imagePath,
-      initialPosition,
-      initialRotation,
-      id,
-    } = swatches.find((swatch) => swatch.id === selection.swatchId)!;
-
-    const skyLayer = createSky(
-      imagePath,
-      `${initialRotation.x} ${initialRotation.y} ${initialRotation.z}`,
-      `${initialPosition.x} ${initialPosition.y} ${initialPosition.z}`,
-      "swatch-layer"
     );
+    if (category) {
+      const { id: catId, swatches } = category;
+      const {
+        path: imagePath,
+        initialPosition,
+        initialRotation,
+        id,
+      } = swatches.find((swatch) => swatch.id === selection.swatchId)!;
 
-    skyLayer.setAttribute("data-swatch-id", id.toString());
-    skyLayer.setAttribute("data-category-id", catId.toString());
+      const skyLayer = createSky(
+        imagePath,
+        `${initialRotation.x} ${initialRotation.y} ${initialRotation.z}`,
+        `${initialPosition.x} ${initialPosition.y} ${initialPosition.z}`,
+        "swatch-layer"
+      );
 
-    const AScene = $query(`.${INITIAL_PAYLOAD.aSceneContainer}`);
-    AScene?.appendChild(skyLayer);
+      skyLayer.setAttribute("data-swatch-id", id.toString());
+      skyLayer.setAttribute("data-category-id", catId.toString());
+
+      const AScene = $query(`.${INITIAL_PAYLOAD.aSceneContainer}`);
+      AScene?.appendChild(skyLayer);
+    }
   });
 };
 

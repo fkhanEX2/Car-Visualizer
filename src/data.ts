@@ -209,7 +209,7 @@ export const DATA: IVisualizer = {
       isDefault: false,
       categories: [
         {
-          id: 3803,
+          id: 3801,
           name: "Color",
           initialView: {
             id: 5719,
@@ -219,7 +219,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2808,
+              id: 2801,
               name: "Black",
               isSelected: true,
               path: Scene2Category1Swatch1,
@@ -228,7 +228,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2809,
+              id: 2802,
               name: "Blue",
               isSelected: false,
               path: Scene2Category1Swatch2,
@@ -237,7 +237,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2810,
+              id: 2803,
               name: "Red",
               isSelected: false,
               path: Scene2Category1Swatch3,
@@ -246,7 +246,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2811,
+              id: 2804,
               name: "White",
               isSelected: false,
               path: Scene2Category1Swatch4,
@@ -315,7 +315,7 @@ export const DATA: IVisualizer = {
       isDefault: false,
       categories: [
         {
-          id: 3804,
+          id: 3801,
           name: "Color",
           initialView: {
             id: 5719,
@@ -325,7 +325,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2812,
+              id: 2801,
               name: "Black",
               isSelected: true,
               path: Scene3Category1Swatch1,
@@ -334,7 +334,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2813,
+              id: 2802,
               name: "Blue",
               isSelected: false,
               path: Scene3Category1Swatch2,
@@ -343,7 +343,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2814,
+              id: 2803,
               name: "Red",
               isSelected: false,
               path: Scene3Category1Swatch3,
@@ -352,7 +352,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2815,
+              id: 2804,
               name: "White",
               isSelected: false,
               path: Scene3Category1Swatch4,
@@ -363,7 +363,7 @@ export const DATA: IVisualizer = {
           ],
         },
         {
-          id: 3805,
+          id: 3802,
           name: "Alloys",
           initialView: {
             id: 5719,
@@ -373,7 +373,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2816,
+              id: 2805,
               name: "Alloy 1",
               isSelected: true,
               path: Scene3Category2Swatch1,
@@ -382,7 +382,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2817,
+              id: 2806,
               name: "Alloy 2",
               isSelected: false,
               path: Scene3Category2Swatch2,
@@ -391,7 +391,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2818,
+              id: 2807,
               name: "Alloy 3",
               isSelected: false,
               path: Scene3Category2Swatch3,
@@ -460,7 +460,7 @@ export const DATA: IVisualizer = {
       isDefault: false,
       categories: [
         {
-          id: 3806,
+          id: 3801,
           name: "Color",
           initialView: {
             id: 5719,
@@ -470,7 +470,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2819,
+              id: 2801,
               name: "Black",
               isSelected: true,
               path: Scene4Category1Swatch1,
@@ -479,7 +479,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2820,
+              id: 2802,
               name: "Blue",
               isSelected: false,
               path: Scene4Category1Swatch2,
@@ -488,7 +488,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2821,
+              id: 2803,
               name: "Red",
               isSelected: false,
               path: Scene4Category1Swatch3,
@@ -497,7 +497,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2822,
+              id: 2804,
               name: "White",
               isSelected: false,
               path: Scene4Category1Swatch4,
@@ -508,7 +508,7 @@ export const DATA: IVisualizer = {
           ],
         },
         {
-          id: 3807,
+          id: 3802,
           name: "Alloys",
           initialView: {
             id: 5719,
@@ -518,7 +518,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2823,
+              id: 2805,
               name: "Alloy 1",
               isSelected: true,
               path: Scene4Category2Swatch1,
@@ -527,7 +527,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2824,
+              id: 2806,
               name: "Alloy 2",
               isSelected: false,
               path: Scene4Category2Swatch2,
@@ -536,7 +536,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2825,
+              id: 2807,
               name: "Alloy 3",
               isSelected: false,
               path: Scene4Category2Swatch3,
@@ -605,7 +605,7 @@ export const DATA: IVisualizer = {
       isDefault: false,
       categories: [
         {
-          id: 3808,
+          id: 3801,
           name: "Color",
           initialView: {
             id: 5719,
@@ -615,7 +615,7 @@ export const DATA: IVisualizer = {
           },
           swatches: [
             {
-              id: 2826,
+              id: 2801,
               name: "Black",
               isSelected: true,
               path: Scene5Category1Swatch1,
@@ -624,7 +624,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2827,
+              id: 2802,
               name: "Blue",
               isSelected: false,
               path: Scene5Category1Swatch2,
@@ -633,7 +633,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2828,
+              id: 2803,
               name: "Red",
               isSelected: false,
               path: Scene5Category1Swatch3,
@@ -642,7 +642,7 @@ export const DATA: IVisualizer = {
               initialRotation: { x: 0, y: -90, z: 0 },
             },
             {
-              id: 2829,
+              id: 2804,
               name: "White",
               isSelected: false,
               path: Scene5Category1Swatch4,

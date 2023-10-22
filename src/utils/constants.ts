@@ -14,6 +14,10 @@ export enum PUBSUB_CONSTANTS {
 export enum INTENTS {
   CHANGE_CAR_COLOR = "change_car_color",
   CAR_INFO_QUERY = "car_info_query",
+  DOOR_OPEN = "door_open",
+  CHANGE_VIEW = "change_view",
+  ROTATE = "rotate",
+  HEADLIGHT_ON = "headlight_on",
 }
 
 export const CHAT_HEADER = "Customize with Ease";
