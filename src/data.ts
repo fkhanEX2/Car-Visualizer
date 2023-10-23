@@ -2,10 +2,11 @@ import Black from "./static/images/black.png";
 import Blue from "./static/images/blue.png";
 import White from "./static/images/white.png";
 import Red from "./static/images/red.png";
-import Alloy1 from "./static/images/Alloy1.png";
-import Alloy2 from "./static/images/Alloy2.png";
-import Alloy3 from "./static/images/Alloy3.png";
+import Alloy1 from "./static/images/Alloy1.jpg";
+import Alloy2 from "./static/images/Alloy2.jpg";
+import Alloy3 from "./static/images/Alloy3.jpg";
 import Hotspot from "./static/images/HotspotIcon.png";
+import ColorBlack from "./static/images/colorBlack.png";
 import {
   Scene1BaseImage,
   Scene1Category1Swatch1,
@@ -57,7 +58,7 @@ export const DATA: IVisualizer = {
   scenes: [
     {
       id: 4801,
-      name: "Scene 1",
+      name: "Side",
       baseImage: Scene1BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -72,6 +73,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2801,
@@ -120,6 +122,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2805,
@@ -202,7 +205,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4802,
-      name: "Scene 2",
+      name: "Front",
       baseImage: Scene2BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -217,6 +220,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2801,
@@ -308,7 +312,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4803,
-      name: "Scene 3",
+      name: "Right",
       baseImage: Scene3BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -323,6 +327,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2801,
@@ -371,6 +376,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2805,
@@ -453,7 +459,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4804,
-      name: "Scene 4",
+      name: "Left",
       baseImage: Scene4BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -468,6 +474,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2801,
@@ -516,6 +523,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2805,
@@ -598,7 +606,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4805,
-      name: "Scene 5",
+      name: "Back",
       baseImage: Scene5BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -613,6 +621,7 @@ export const DATA: IVisualizer = {
             pitch: 0.09,
             fov: 61.94,
           },
+          thumbnail: ColorBlack,
           swatches: [
             {
               id: 2801,

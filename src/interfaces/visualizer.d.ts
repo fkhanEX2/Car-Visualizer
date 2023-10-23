@@ -29,6 +29,7 @@ interface ISwatch {
 interface ICategory {
   id: number;
   name: string;
+  thumbnail: string;
   initialView: IInitialView;
   swatches: ISwatch[];
 }
