@@ -5,7 +5,7 @@ import ProfileIcon from "../../static/icons/ProfileIcon.png";
 import FrameIcon from "../../static/icons/FrameIcon.png";
 import UserIcon from "../../static/icons/UserIcon.png";
 import CollapseIcon from "../../static/icons/CollapseIcon.png";
-import { $id, $query, $queryAll } from "../../utils/dom";
+import { $id, $query } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";
 import { ChatService } from "../../services/chat";
