@@ -1,10 +1,10 @@
 import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
-import SendIcon from "../../static/images/sendIcon.png";
-import ChatIcon from "../../static/images/chatIcon.png";
-import profileIcon from "../../static/images/profileIcon.png";
-import FrameIcon from "../../static/images/frameIcon.png";
-import userIcon from "../../static/images/userIcon.png";
-import CollapseIcon from "../../static/images/downArrow.png";
+import SendIcon from "../../static/icons/SendIcon.png";
+import ChatIcon from "../../static/icons/ChatIcon.png";
+import ProfileIcon from "../../static/icons/ProfileIcon.png";
+import FrameIcon from "../../static/icons/FrameIcon.png";
+import UserIcon from "../../static/icons/UserIcon.png";
+import CollapseIcon from "../../static/icons/CollapseIcon.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
 import { Entity } from "aframe";
@@ -38,11 +38,11 @@ export const loadChat = (container: string) => {
 export const renderQuery = ({ answer, query, id }: IQuesAns) => {
   return `
     <div class="chat-list-item query-${id}">
-      <img src=${profileIcon}/>
+      <img src=${ProfileIcon}/>
       <p>${query}</p>
     </div>
     <div class="chat-list-item answer-${id}">
-      <img src=${userIcon}/>
+      <img src=${UserIcon}/>
       <p>${answer}</p>
     </div>
   `;

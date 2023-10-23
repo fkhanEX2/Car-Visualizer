@@ -1,6 +1,6 @@
 import localStorage from "../../shared/localStorage";
 import { $id, $query } from "../../utils/dom";
-import cameraIcon from "../../static/images/cameraIcon.png";
+import CameraIcon from "../../static/icons/CameraIcon.png";
 import { ACTIONS } from "../../utils/constants";
 import { getSceneFromSceneName } from "../../shared/common";
 import { loadVisualizer } from "../visualizer/visualizer";
@@ -47,7 +47,7 @@ export const renderAction = () => {
   return `
       <div class="action-container">
         <div class="action-item-door-opened ${isDoorOpened ? "active" : ""}">
-          <img name="door-opened" src=${cameraIcon}/>
+          <img name="door-opened" src=${CameraIcon}/>
         </div>
       </div>
     `;

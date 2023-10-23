@@ -4,9 +4,7 @@ import localStorage from "../../shared/localStorage";
 import pubsub from "../../shared/pubsub";
 import { INITIAL_PAYLOAD, PUBSUB_CONSTANTS } from "../../utils/constants";
 import { $id, $query, $queryAll } from "../../utils/dom";
-import CrossIcon from "../../static/images/crossIcon.png";
-import closeIcon from "../../static/images/closeIcon.png";
-import colorBlack from "../../static/images/colorBlack.png";
+import CloseIcon from "../../static/icons/CloseIcon.png";
 import "./swatch.css";
 
 export const loadSwatches = (container: string) => {
@@ -21,8 +19,10 @@ export const loadSwatches = (container: string) => {
       categoryName: string;
       categories: ICategory[];
     }) => {
-      const { swatches } = categories.find((category) => category.id === id)!;
-      initializeSwatches(swatches, container, id, name);
+      const { swatches, thumbnail } = categories.find(
+        (category) => category.id === id
+      )!;
+      initializeSwatches(swatches, container, id, name, thumbnail);
     }
   );
 };
@@ -31,7 +31,8 @@ export const initializeSwatches = (
   swatches: ISwatch[],
   container: string,
   categoryId: number,
-  categoryName: string
+  categoryName: string,
+  thumbnail: string
 ) => {
   const visualizerContainer = $id(container)!;
   const swatchContainer = $query(
@@ -43,7 +44,7 @@ export const initializeSwatches = (
   }
   visualizerContainer.insertAdjacentHTML(
     "beforeend",
-    renderSwatches(swatches, categoryName)
+    renderSwatches(swatches, categoryName, thumbnail)
   );
   const swatchCloseButton = $query(".swatch-container-close");
   const newSwatchContainer = $query(
@@ -176,15 +177,19 @@ export const swatchClick = (
   pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, swatchDetails);
 };
 
-export const renderSwatches = (swatches: ISwatch[], categoryName: string) => {
+export const renderSwatches = (
+  swatches: ISwatch[],
+  categoryName: string,
+  thumbnail: string
+) => {
   return `
   <div class="swatch-category hide">
     <div class="swatch-header">
       <div class="swatch-header-text">
-        <img class="swatch-container-category-icon" src=${colorBlack}>
+        <img class="swatch-container-category-icon" src=${thumbnail}>
         <p>${categoryName}</p>
       </div>
-      <img class="swatch-container-close" src=${closeIcon}>
+      <img class="swatch-container-close" src=${CloseIcon}>
     </div>
     <div class="swatch-category-options">
       <ul class="swatch-category-list">

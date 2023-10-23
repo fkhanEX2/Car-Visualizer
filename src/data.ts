@@ -1,12 +1,13 @@
-import Black from "./static/images/black.png";
-import Blue from "./static/images/blue.png";
-import White from "./static/images/white.png";
-import Red from "./static/images/red.png";
-import Alloy1 from "./static/images/Alloy1.jpg";
-import Alloy2 from "./static/images/Alloy2.jpg";
-import Alloy3 from "./static/images/Alloy3.jpg";
-import Hotspot from "./static/images/HotspotIcon.png";
-import ColorBlack from "./static/images/colorBlack.png";
+import Black from "./static/icons/black.png";
+import Blue from "./static/icons/blue.png";
+import White from "./static/icons/white.png";
+import Red from "./static/icons/red.png";
+import Alloy1 from "./static/icons/Alloy1.jpg";
+import Alloy2 from "./static/icons/Alloy2.jpg";
+import Alloy3 from "./static/icons/Alloy3.jpg";
+import Hotspot from "./static/icons/HotspotIcon.png";
+import WheelIcon from "./static/icons/WheelIcon.png";
+import ColorIcon from "./static/icons/ColorIcon.png";
 import {
   Scene1BaseImage,
   Scene1Category1Swatch1,
@@ -111,8 +112,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -155,8 +155,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -234,8 +233,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -322,7 +320,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -365,8 +363,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -444,8 +441,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -488,8 +484,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -567,8 +562,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -655,8 +649,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -699,8 +692,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -778,8 +770,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -866,8 +857,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -910,8 +900,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -989,8 +978,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
@@ -1033,8 +1021,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-
-          thumbnail: ColorBlack,
+          thumbnail: WheelIcon,
           swatches: [
             {
               id: 2805,
@@ -1112,8 +1099,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          
-          thumbnail: ColorBlack,
+          thumbnail: ColorIcon,
           swatches: [
             {
               id: 2801,
