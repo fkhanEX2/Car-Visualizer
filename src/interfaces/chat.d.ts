@@ -19,11 +19,13 @@ interface IGetActionRequest {
   role: string;
 }
 
+interface IGetActionIntent {
+  intent: string;
+  value: string | boolean;
+}
+
 interface IGetActionResponse {
-  response: {
-    intent: string;
-    value: string;
-  };
+  response: IGetActionIntent;
 }
 
 interface IGetQuestionAnswerRequest {

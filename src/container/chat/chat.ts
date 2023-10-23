@@ -1,9 +1,4 @@
-import {
-  AVAILABLE_COLORS,
-  CHAT_HEADER,
-  INTENTS,
-  PUBSUB_CONSTANTS,
-} from "../../utils/constants";
+import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
 import SendIcon from "../../static/images/sendIcon.png";
 import ChatIcon from "../../static/images/chatIcon.png";
 import FrameIcon from "../../static/images/frameIcon.png";
@@ -15,8 +10,8 @@ import { Entity } from "aframe";
 import { ChatService } from "../../services/chat";
 import localStorage from "../../shared/localStorage";
 import pubsub from "../../shared/pubsub";
-import { selectCurrentSwatch } from "../swatch/swatch";
 import cacheStorage from "../../shared/cacheStorage";
+import { attachChatIntentEvents } from "../chat-intent/chatIntent";
 
 export const loadChat = (container: string) => {
   const visualizerContainer = $id(container);
@@ -127,77 +122,78 @@ export const chatSubmitHandler = async (
         sceneId,
         role: "user",
       });
-      let chatQues = chatInputElement.value.trim();
-      let chatAns = colorCheck(response.value.toString())
-        ? "Yeah sure!"
-        : "Currently Unavailable";
-      if (response.intent === INTENTS.CAR_INFO_QUERY) {
-        const res = await ChatService.getQuestionAnswer({
-          query: chatInputElement.value.trim(),
-          sceneId,
-          role: "user",
-        });
-        chatAns = res.toString();
-      }
-      chatInputElement.value = "";
-      pubsub.publish(PUBSUB_CONSTANTS.CHAT_QUERY_RESOLVED, {
-        query: chatQues,
-        answer: chatAns,
-        id: 1,
-      });
-      if (response.intent !== INTENTS.CAR_INFO_QUERY) {
-        updateSceneSelections({ response });
-      }
+      // let chatQues = chatInputElement.value.trim();
+      // let chatAns = colorCheck(response.value.toString())
+      //   ? "Yeah sure!"
+      //   : "Currently Unavailable";
+      // if (response.intent === INTENTS.CAR_INFO_QUERY) {
+      //   const res = await ChatService.getQuestionAnswer({
+      //     query: chatInputElement.value.trim(),
+      //     sceneId,
+      //     role: "user",
+      //   });
+      //   chatAns = res.toString();
+      // }
+      // chatInputElement.value = "";
+      // pubsub.publish(PUBSUB_CONSTANTS.CHAT_QUERY_RESOLVED, {
+      //   query: chatQues,
+      //   answer: chatAns,
+      //   id: 1,
+      // });
+      // if (response.intent !== INTENTS.CAR_INFO_QUERY) {
+      //   updateSceneSelections({ response });
+      // }
+      await attachChatIntentEvents(chatInputElement.value.trim(), response);
     }
   } catch (err: any) {
     console.log(err);
   }
 };
 
-export const getSelectionUponChat = ({
-  response,
-}: IGetActionResponse): IStorageSelection => {
-  const currentSceneId = localStorage.getCurrentSceneId();
-  const { value, intent } = response;
-  const { categories } = cacheStorage.storage.visualizer.scenes.find(
-    (scene) => scene.id === currentSceneId
-  )!;
-  const data = categories[0].swatches.find(
-    (swatch) => swatch.name.toLowerCase() === value.toLowerCase()
-  );
-  if (data) {
-    return {
-      category: categories[0].name,
-      categoryId: categories[0].id,
-      swatchId: data.id,
-      swatchName: data.name,
-    };
-  }
-  return {} as IStorageSelection;
-};
+// export const getSelectionUponChat = ({
+//   response,
+// }: IGetActionResponse): IStorageSelection => {
+//   const currentSceneId = localStorage.getCurrentSceneId();
+//   const { value, intent } = response;
+//   const { categories } = cacheStorage.storage.visualizer.scenes.find(
+//     (scene) => scene.id === currentSceneId
+//   )!;
+//   const data = categories[0].swatches.find(
+//     (swatch) => swatch.name.toLowerCase() === value.toLowerCase()
+//   );
+//   if (data) {
+//     return {
+//       category: categories[0].name,
+//       categoryId: categories[0].id,
+//       swatchId: data.id,
+//       swatchName: data.name,
+//     };
+//   }
+//   return {} as IStorageSelection;
+// };
 
-export const colorCheck = (color: string) => {
-  return AVAILABLE_COLORS.includes(color.toLowerCase());
-};
+// export const colorCheck = (color: string) => {
+//   return AVAILABLE_COLORS.includes(color.toLowerCase());
+// };
 
-export const updateSceneSelections = ({ response }: IGetActionResponse) => {
-  const { category, categoryId, swatchId, swatchName } = getSelectionUponChat({
-    response,
-  });
-  if (swatchId) {
-    pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
-      categoryId,
-      categoryName: category,
-      swatchId,
-      swatchName,
-    } as ISwatchDetail);
-    const swatchesLi = $queryAll("ul.swatch-category-list li");
-    const activeCtaegory = $query(`.category-container-list-item.active`);
-    if (
-      activeCtaegory &&
-      Number(activeCtaegory.getAttribute("data-category-id")) === categoryId
-    ) {
-      selectCurrentSwatch(categoryId, swatchesLi as NodeListOf<HTMLElement>);
-    }
-  }
-};
+// export const updateSceneSelections = ({ response }: IGetActionResponse) => {
+//   const { category, categoryId, swatchId, swatchName } = getSelectionUponChat({
+//     response,
+//   });
+//   if (swatchId) {
+//     pubsub.publish(PUBSUB_CONSTANTS.SWATCH_SELECT_EVENT, {
+//       categoryId,
+//       categoryName: category,
+//       swatchId,
+//       swatchName,
+//     } as ISwatchDetail);
+//     const swatchesLi = $queryAll("ul.swatch-category-list li");
+//     const activeCtaegory = $query(`.category-container-list-item.active`);
+//     if (
+//       activeCtaegory &&
+//       Number(activeCtaegory.getAttribute("data-category-id")) === categoryId
+//     ) {
+//       selectCurrentSwatch(categoryId, swatchesLi as NodeListOf<HTMLElement>);
+//     }
+//   }
+// };
