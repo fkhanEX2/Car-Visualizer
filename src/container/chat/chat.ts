@@ -1,8 +1,9 @@
 import { CHAT_HEADER, PUBSUB_CONSTANTS } from "../../utils/constants";
 import SendIcon from "../../static/images/sendIcon.png";
 import ChatIcon from "../../static/images/chatIcon.png";
+import profileIcon from "../../static/images/profileIcon.png";
 import FrameIcon from "../../static/images/frameIcon.png";
-import UserIcon from "../../static/images/user.png";
+import userIcon from "../../static/images/userIcon.png";
 import CollapseIcon from "../../static/images/downArrow.png";
 import { $id, $query, $queryAll } from "../../utils/dom";
 import "./chat.css";
@@ -37,11 +38,11 @@ export const loadChat = (container: string) => {
 export const renderQuery = ({ answer, query, id }: IQuesAns) => {
   return `
     <div class="chat-list-item query-${id}">
-      <img src=${UserIcon}/>
+      <img src=${profileIcon}/>
       <p>${query}</p>
     </div>
     <div class="chat-list-item answer-${id}">
-      <img src=${UserIcon}/>
+      <img src=${userIcon}/>
       <p>${answer}</p>
     </div>
   `;
