@@ -3,6 +3,7 @@ import cacheStorage from "../../shared/cacheStorage";
 import { loadCacheAndLocalStorage } from "../../shared/common";
 import localStorage from "../../shared/localStorage";
 import { INITIAL_PAYLOAD } from "../../utils/constants";
+import { loadAction } from "../action/action";
 import { loadCategory } from "../category/category";
 import { loadChat } from "../chat/chat";
 import { loadHotspot } from "../hotspot/hotspot";
@@ -34,4 +35,5 @@ export const render = () => {
   )!;
   loadCategory(scene, INITIAL_PAYLOAD.visualizerContainer);
   loadHotspot(scene, INITIAL_PAYLOAD.aSceneContainer);
+  loadAction(INITIAL_PAYLOAD.visualizerContainer);
 };

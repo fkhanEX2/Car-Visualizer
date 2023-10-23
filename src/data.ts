@@ -18,12 +18,29 @@ import {
   Scene1Category2Swatch3,
 } from "./static/Scene-1";
 import {
+  Scene6BaseImage,
+  Scene6Category1Swatch1,
+  Scene6Category1Swatch2,
+  Scene6Category1Swatch3,
+  Scene6Category1Swatch4,
+  Scene6Category2Swatch1,
+  Scene6Category2Swatch2,
+  Scene6Category2Swatch3,
+} from "./static/Scene-6";
+import {
   Scene2BaseImage,
   Scene2Category1Swatch1,
   Scene2Category1Swatch2,
   Scene2Category1Swatch3,
   Scene2Category1Swatch4,
 } from "./static/Scene-2";
+import {
+  Scene7BaseImage,
+  Scene7Category1Swatch1,
+  Scene7Category1Swatch2,
+  Scene7Category1Swatch3,
+  Scene7Category1Swatch4,
+} from "./static/Scene-7";
 import {
   Scene3BaseImage,
   Scene3Category1Swatch1,
@@ -35,6 +52,16 @@ import {
   Scene3Category2Swatch3,
 } from "./static/Scene-3";
 import {
+  Scene8BaseImage,
+  Scene8Category1Swatch1,
+  Scene8Category1Swatch2,
+  Scene8Category1Swatch3,
+  Scene8Category1Swatch4,
+  Scene8Category2Swatch1,
+  Scene8Category2Swatch2,
+  Scene8Category2Swatch3,
+} from "./static/Scene-8";
+import {
   Scene4BaseImage,
   Scene4Category1Swatch1,
   Scene4Category1Swatch2,
@@ -45,12 +72,29 @@ import {
   Scene4Category2Swatch3,
 } from "./static/Scene-4";
 import {
+  Scene9BaseImage,
+  Scene9Category1Swatch1,
+  Scene9Category1Swatch2,
+  Scene9Category1Swatch3,
+  Scene9Category1Swatch4,
+  Scene9Category2Swatch1,
+  Scene9Category2Swatch2,
+  Scene9Category2Swatch3,
+} from "./static/Scene-9";
+import {
   Scene5BaseImage,
   Scene5Category1Swatch1,
   Scene5Category1Swatch2,
   Scene5Category1Swatch3,
   Scene5Category1Swatch4,
 } from "./static/Scene-5";
+import {
+  Scene10BaseImage,
+  Scene10Category1Swatch1,
+  Scene10Category1Swatch2,
+  Scene10Category1Swatch3,
+  Scene10Category1Swatch4,
+} from "./static/Scene-10";
 
 export const DATA: IVisualizer = {
   name: "Bugati",
@@ -58,7 +102,7 @@ export const DATA: IVisualizer = {
   scenes: [
     {
       id: 4801,
-      name: "Side",
+      name: "Closed_Door_Side",
       baseImage: Scene1BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -67,12 +111,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -116,12 +155,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -154,17 +188,9 @@ export const DATA: IVisualizer = {
           ],
         },
       ],
-      initialView: {
-        id: 5706,
-        yaw: 0,
-        pitch: 0,
-        fov: 75,
-      },
       hotspots: [
         {
           id: 1801,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 2",
           sceneId: 4802,
@@ -173,8 +199,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1802,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 3",
           sceneId: 4803,
@@ -183,8 +207,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1803,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 4",
           sceneId: 4804,
@@ -193,8 +215,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1804,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 5",
           sceneId: 4805,
@@ -205,7 +225,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4802,
-      name: "Front",
+      name: "Closed_Door_Front",
       baseImage: Scene2BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -214,12 +234,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -261,17 +276,9 @@ export const DATA: IVisualizer = {
           ],
         },
       ],
-      initialView: {
-        id: 5706,
-        yaw: 0,
-        pitch: 0,
-        fov: 75,
-      },
       hotspots: [
         {
           id: 1805,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 1",
           sceneId: 4801,
@@ -280,8 +287,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1806,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 3",
           sceneId: 4803,
@@ -290,8 +295,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1807,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 4",
           sceneId: 4804,
@@ -300,8 +303,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1808,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 5",
           sceneId: 4805,
@@ -312,7 +313,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4803,
-      name: "Right",
+      name: "Closed_Door_Right",
       baseImage: Scene3BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -321,12 +322,6 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -370,12 +365,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -408,17 +398,9 @@ export const DATA: IVisualizer = {
           ],
         },
       ],
-      initialView: {
-        id: 5706,
-        yaw: 0,
-        pitch: 0,
-        fov: 75,
-      },
       hotspots: [
         {
           id: 1809,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 1",
           sceneId: 4801,
@@ -427,8 +409,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1810,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 2",
           sceneId: 4802,
@@ -437,8 +417,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1811,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 4",
           sceneId: 4804,
@@ -447,8 +425,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1812,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 5",
           sceneId: 4805,
@@ -459,7 +435,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4804,
-      name: "Left",
+      name: "Closed_Door_Left",
       baseImage: Scene4BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -468,12 +444,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -517,12 +488,7 @@ export const DATA: IVisualizer = {
         {
           id: 3802,
           name: "Alloys",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -555,17 +521,9 @@ export const DATA: IVisualizer = {
           ],
         },
       ],
-      initialView: {
-        id: 5706,
-        yaw: 0,
-        pitch: 0,
-        fov: 75,
-      },
       hotspots: [
         {
           id: 1813,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 1",
           sceneId: 4801,
@@ -574,8 +532,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1814,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 2",
           sceneId: 4802,
@@ -584,8 +540,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1815,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 3",
           sceneId: 4803,
@@ -594,8 +548,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1816,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 5",
           sceneId: 4805,
@@ -606,7 +558,7 @@ export const DATA: IVisualizer = {
     },
     {
       id: 4805,
-      name: "Back",
+      name: "Closed_Door_Back",
       baseImage: Scene5BaseImage,
       initialPosition: { x: 0, y: 0, z: 0 },
       initialRotation: { x: 0, y: -90, z: 0 },
@@ -615,12 +567,7 @@ export const DATA: IVisualizer = {
         {
           id: 3801,
           name: "Color",
-          initialView: {
-            id: 5719,
-            yaw: 0.54,
-            pitch: 0.09,
-            fov: 61.94,
-          },
+
           thumbnail: ColorBlack,
           swatches: [
             {
@@ -662,17 +609,9 @@ export const DATA: IVisualizer = {
           ],
         },
       ],
-      initialView: {
-        id: 5706,
-        yaw: 0,
-        pitch: 0,
-        fov: 75,
-      },
       hotspots: [
         {
           id: 1817,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 1",
           sceneId: 4801,
@@ -681,8 +620,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1818,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 2",
           sceneId: 4802,
@@ -691,8 +628,6 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1819,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 3",
           sceneId: 4803,
@@ -701,11 +636,554 @@ export const DATA: IVisualizer = {
         },
         {
           id: 1820,
-          yaw: 0,
-          pitch: 0,
           thumbnail: Hotspot,
           header: "Scene 4",
           sceneId: 4804,
+          initialPosition: { x: 2, y: -4, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+      ],
+    },
+    {
+      id: 4806,
+      name: "Opened_Door_Side",
+      baseImage: Scene6BaseImage,
+      initialPosition: { x: 0, y: 0, z: 0 },
+      initialRotation: { x: 0, y: -90, z: 0 },
+      isDefault: true,
+      categories: [
+        {
+          id: 3801,
+          name: "Color",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2801,
+              name: "Black",
+              isSelected: true,
+              path: Scene6Category1Swatch1,
+              thumbnailPath: Black,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2802,
+              name: "Blue",
+              isSelected: false,
+              path: Scene6Category1Swatch2,
+              thumbnailPath: Blue,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2803,
+              name: "Red",
+              isSelected: false,
+              path: Scene6Category1Swatch3,
+              thumbnailPath: Red,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2804,
+              name: "White",
+              isSelected: false,
+              path: Scene6Category1Swatch4,
+              thumbnailPath: White,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+        {
+          id: 3802,
+          name: "Alloys",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2805,
+              name: "Alloy 1",
+              isSelected: true,
+              path: Scene6Category2Swatch1,
+              thumbnailPath: Alloy1,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2806,
+              name: "Alloy 2",
+              isSelected: false,
+              path: Scene6Category2Swatch2,
+              thumbnailPath: Alloy2,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2807,
+              name: "Alloy 3",
+              isSelected: false,
+              path: Scene6Category2Swatch3,
+              thumbnailPath: Alloy3,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+      ],
+      hotspots: [
+        {
+          id: 1821,
+          thumbnail: Hotspot,
+          header: "Scene 7",
+          sceneId: 4807,
+          initialPosition: { x: 4, y: 0, z: -5 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1822,
+          thumbnail: Hotspot,
+          header: "Scene 8",
+          sceneId: 4808,
+          initialPosition: { x: 4, y: -1, z: -3 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1823,
+          thumbnail: Hotspot,
+          header: "Scene 9",
+          sceneId: 4809,
+          initialPosition: { x: -4, y: -1, z: -3 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1824,
+          thumbnail: Hotspot,
+          header: "Scene 10",
+          sceneId: 4810,
+          initialPosition: { x: -4, y: 0, z: -5 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+      ],
+    },
+    {
+      id: 4807,
+      name: "Opened_Door_Front",
+      baseImage: Scene7BaseImage,
+      initialPosition: { x: 0, y: 0, z: 0 },
+      initialRotation: { x: 0, y: -90, z: 0 },
+      isDefault: false,
+      categories: [
+        {
+          id: 3801,
+          name: "Color",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2801,
+              name: "Black",
+              isSelected: true,
+              path: Scene7Category1Swatch1,
+              thumbnailPath: Black,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2802,
+              name: "Blue",
+              isSelected: false,
+              path: Scene7Category1Swatch2,
+              thumbnailPath: Blue,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2803,
+              name: "Red",
+              isSelected: false,
+              path: Scene7Category1Swatch3,
+              thumbnailPath: Red,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2804,
+              name: "White",
+              isSelected: false,
+              path: Scene7Category1Swatch4,
+              thumbnailPath: White,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+      ],
+      hotspots: [
+        {
+          id: 1825,
+          thumbnail: Hotspot,
+          header: "Scene 6",
+          sceneId: 4806,
+          initialPosition: { x: -2, y: 0, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1826,
+          thumbnail: Hotspot,
+          header: "Scene 8",
+          sceneId: 4808,
+          initialPosition: { x: -2, y: -2, z: -5 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1827,
+          thumbnail: Hotspot,
+          header: "Scene 9",
+          sceneId: 4809,
+          initialPosition: { x: 2, y: 0, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1828,
+          thumbnail: Hotspot,
+          header: "Scene 10",
+          sceneId: 4810,
+          initialPosition: { x: 0.5, y: 1, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+      ],
+    },
+    {
+      id: 4808,
+      name: "Opened_Door_Right",
+      baseImage: Scene8BaseImage,
+      initialPosition: { x: 0, y: 0, z: 0 },
+      initialRotation: { x: 0, y: -90, z: 0 },
+      isDefault: false,
+      categories: [
+        {
+          id: 3801,
+          name: "Color",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2801,
+              name: "Black",
+              isSelected: true,
+              path: Scene8Category1Swatch1,
+              thumbnailPath: Black,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2802,
+              name: "Blue",
+              isSelected: false,
+              path: Scene8Category1Swatch2,
+              thumbnailPath: Blue,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2803,
+              name: "Red",
+              isSelected: false,
+              path: Scene8Category1Swatch3,
+              thumbnailPath: Red,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2804,
+              name: "White",
+              isSelected: false,
+              path: Scene8Category1Swatch4,
+              thumbnailPath: White,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+        {
+          id: 3802,
+          name: "Alloys",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2805,
+              name: "Alloy 1",
+              isSelected: true,
+              path: Scene8Category2Swatch1,
+              thumbnailPath: Alloy1,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2806,
+              name: "Alloy 2",
+              isSelected: false,
+              path: Scene8Category2Swatch2,
+              thumbnailPath: Alloy2,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2807,
+              name: "Alloy 3",
+              isSelected: false,
+              path: Scene8Category2Swatch3,
+              thumbnailPath: Alloy3,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+      ],
+      hotspots: [
+        {
+          id: 1829,
+          thumbnail: Hotspot,
+          header: "Scene 6",
+          sceneId: 4806,
+          initialPosition: { x: -4, y: -2, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1830,
+          thumbnail: Hotspot,
+          header: "Scene 7",
+          sceneId: 4807,
+          initialPosition: { x: 1, y: -2, z: -5 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1831,
+          thumbnail: Hotspot,
+          header: "Scene 9",
+          sceneId: 4809,
+          initialPosition: { x: -6, y: -1, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1832,
+          thumbnail: Hotspot,
+          header: "Scene 10",
+          sceneId: 4810,
+          initialPosition: { x: -4, y: 1, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+      ],
+    },
+    {
+      id: 4809,
+      name: "Opened_Door_Left",
+      baseImage: Scene9BaseImage,
+      initialPosition: { x: 0, y: 0, z: 0 },
+      initialRotation: { x: 0, y: -90, z: 0 },
+      isDefault: false,
+      categories: [
+        {
+          id: 3801,
+          name: "Color",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2801,
+              name: "Black",
+              isSelected: true,
+              path: Scene9Category1Swatch1,
+              thumbnailPath: Black,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2802,
+              name: "Blue",
+              isSelected: false,
+              path: Scene9Category1Swatch2,
+              thumbnailPath: Blue,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2803,
+              name: "Red",
+              isSelected: false,
+              path: Scene9Category1Swatch3,
+              thumbnailPath: Red,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2804,
+              name: "White",
+              isSelected: false,
+              path: Scene9Category1Swatch4,
+              thumbnailPath: White,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+        {
+          id: 3802,
+          name: "Alloys",
+
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2805,
+              name: "Alloy 1",
+              isSelected: true,
+              path: Scene9Category2Swatch1,
+              thumbnailPath: Alloy1,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2806,
+              name: "Alloy 2",
+              isSelected: false,
+              path: Scene9Category2Swatch2,
+              thumbnailPath: Alloy2,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2807,
+              name: "Alloy 3",
+              isSelected: false,
+              path: Scene9Category2Swatch3,
+              thumbnailPath: Alloy3,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+      ],
+      hotspots: [
+        {
+          id: 1833,
+          thumbnail: Hotspot,
+          header: "Scene 6",
+          sceneId: 4806,
+          initialPosition: { x: 5, y: -2, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1834,
+          thumbnail: Hotspot,
+          header: "Scene 7",
+          sceneId: 4807,
+          initialPosition: { x: 7, y: -1, z: -10 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1835,
+          thumbnail: Hotspot,
+          header: "Scene 8",
+          sceneId: 4808,
+          initialPosition: { x: 9, y: -3, z: -12 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1836,
+          thumbnail: Hotspot,
+          header: "Scene 10",
+          sceneId: 4810,
+          initialPosition: { x: 0, y: -3, z: -10 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+      ],
+    },
+    {
+      id: 4810,
+      name: "Opened_Door_Back",
+      baseImage: Scene10BaseImage,
+      initialPosition: { x: 0, y: 0, z: 0 },
+      initialRotation: { x: 0, y: -90, z: 0 },
+      isDefault: false,
+      categories: [
+        {
+          id: 3801,
+          name: "Color",
+          
+          thumbnail: ColorBlack,
+          swatches: [
+            {
+              id: 2801,
+              name: "Black",
+              isSelected: true,
+              path: Scene10Category1Swatch1,
+              thumbnailPath: Black,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2802,
+              name: "Blue",
+              isSelected: false,
+              path: Scene10Category1Swatch2,
+              thumbnailPath: Blue,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2803,
+              name: "Red",
+              isSelected: false,
+              path: Scene10Category1Swatch3,
+              thumbnailPath: Red,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+            {
+              id: 2804,
+              name: "White",
+              isSelected: false,
+              path: Scene10Category1Swatch4,
+              thumbnailPath: White,
+              initialPosition: { x: 0, y: 0, z: 0 },
+              initialRotation: { x: 0, y: -90, z: 0 },
+            },
+          ],
+        },
+      ],
+      hotspots: [
+        {
+          id: 1837,
+          thumbnail: Hotspot,
+          header: "Scene 6",
+          sceneId: 4806,
+          initialPosition: { x: 1, y: -1, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1838,
+          thumbnail: Hotspot,
+          header: "Scene 7",
+          sceneId: 4807,
+          initialPosition: { x: 0, y: 1, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1839,
+          thumbnail: Hotspot,
+          header: "Scene 8",
+          sceneId: 4808,
+          initialPosition: { x: 2, y: 0, z: -8 },
+          initialRotation: { x: 0, y: 0, z: 0 },
+        },
+        {
+          id: 1840,
+          thumbnail: Hotspot,
+          header: "Scene 9",
+          sceneId: 4809,
           initialPosition: { x: 2, y: -4, z: -8 },
           initialRotation: { x: 0, y: 0, z: 0 },
         },

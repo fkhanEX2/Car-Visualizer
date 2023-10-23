@@ -1,13 +1,17 @@
 import { ChatService } from "../../services/chat";
 import cacheStorage from "../../shared/cacheStorage";
+import { getSceneFromSceneName } from "../../shared/common";
+import localStorage from "../../shared/localStorage";
 import pubsub from "../../shared/pubsub";
 import {
+  ACTIONS,
   CHAT_INTENT_OPTION_AVAILABLE,
   INTENTS,
   PUBSUB_CONSTANTS,
 } from "../../utils/constants";
-import { $query, $queryAll } from "../../utils/dom";
+import { $query, $queryAll, clearChatInputField } from "../../utils/dom";
 import { selectCurrentSwatch } from "../swatch/swatch";
+import { loadVisualizer } from "../visualizer/visualizer";
 
 export const attachChatIntentEvents = async (
   query: string,
@@ -17,30 +21,35 @@ export const attachChatIntentEvents = async (
   switch (intent) {
     case INTENTS.CAR_INFO_QUERY:
       await handleCarInfoQueryIntent(query);
+      break;
     case INTENTS.CHANGE_CAR_COLOR:
       handleChangeCarColorIntent(query, intentResponse);
+      break;
     case INTENTS.CHANGE_VIEW:
-      handleChangeViewIntent();
+      handleChangeViewIntent(query, intentResponse);
+      break;
     case INTENTS.DOOR_OPEN:
-      handleDoorOpenIntent();
+      handleDoorOpenIntent(query, intentResponse);
+      break;
     case INTENTS.HEADLIGHT_ON:
       handleHeadlightOnIntent();
+      break;
     case INTENTS.ROTATE:
       handleRotateIntent();
+      break;
     default:
-      handleDefaultIntent();
+      handleDefaultIntent(query);
   }
 };
 
 export const handleCarInfoQueryIntent = async (query: string) => {
-  const chatInputElement = $query(`.chat-input`) as HTMLInputElement;
   const sceneId = localStorage.getCurrentSceneId();
   const response = await ChatService.getQuestionAnswer({
     query,
     sceneId,
     role: "user",
   });
-  chatInputElement.value = "";
+  clearChatInputField();
   publishChat(query, response.toString());
 };
 export const handleChangeCarColorIntent = (
@@ -52,6 +61,7 @@ export const handleChangeCarColorIntent = (
   const { categories } = cacheStorage.storage.visualizer.scenes.find(
     (scene) => scene.id === sceneId
   )!;
+  clearChatInputField();
   publishChat(
     query,
     isIntentColorOptionAvailable(String(value).toLowerCase(), categories)
@@ -111,8 +121,60 @@ const isIntentColorOptionAvailable = (
   return isAvailable;
 };
 
-export const handleChangeViewIntent = () => {};
-export const handleDoorOpenIntent = () => {};
+export const handleChangeViewIntent = (
+  query: string,
+  intentResponse: IGetActionIntent
+) => {
+  const { value } = intentResponse;
+  const currentSceneName = localStorage.getCurrentSceneName();
+  const sceneNameItems = currentSceneName.split("_");
+  const newSceneName =
+    sceneNameItems.slice(0, sceneNameItems.length - 1).join("_") +
+    `_${String(value)}`;
+
+  const scene = cacheStorage.storage.visualizer.scenes.find(
+    (scene) => scene.name.toLowerCase() === newSceneName.toLowerCase()
+  );
+  clearChatInputField();
+  if (scene) {
+    publishChat(query, CHAT_INTENT_OPTION_AVAILABLE.AVAILABLE);
+    const { id: sceneId } = scene;
+    localStorage.updateStorage(sceneId);
+    loadVisualizer();
+  } else {
+    publishChat(query, CHAT_INTENT_OPTION_AVAILABLE.NOT_AVAIlABLE);
+  }
+};
+
+export const handleDoorOpenIntent = (
+  query: string,
+  intentResponse: IGetActionIntent
+) => {
+  const { value } = intentResponse;
+  const currentSceneName = localStorage.getCurrentSceneName();
+  const openDoorActionElement = $query(
+    ".action-item-door-opened"
+  ) as HTMLElement;
+  const view = currentSceneName.split("_").slice(-1)[0];
+  const newSceneName = value
+    ? `${ACTIONS.OPEN_DOOR}_${view}`
+    : `${ACTIONS.CLOSE_DOOR}_${view}`;
+  openDoorActionElement.classList.toggle("active");
+  clearChatInputField();
+  const scene = getSceneFromSceneName(newSceneName);
+  if (scene) {
+    publishChat(query, CHAT_INTENT_OPTION_AVAILABLE.AVAILABLE);
+    localStorage.updateStorage(scene.id);
+    loadVisualizer();
+  } else {
+    publishChat(query, CHAT_INTENT_OPTION_AVAILABLE.NOT_AVAIlABLE);
+  }
+};
+
 export const handleHeadlightOnIntent = () => {};
 export const handleRotateIntent = () => {};
-export const handleDefaultIntent = () => {};
+
+export const handleDefaultIntent = (query: string) => {
+  clearChatInputField();
+  publishChat(query, "Sorry! We cannot figure out the intent from your query.");
+};
