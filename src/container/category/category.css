@@ -30,3 +30,6 @@ li{
     width: 70px;
     opacity: 0.5;
 }
+.category-container-list-item.active{
+    transition: all 0.5s;
+}
