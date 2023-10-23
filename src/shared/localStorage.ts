@@ -81,6 +81,11 @@ export class LocalStorage {
     return data.sceneId;
   }
 
+  getCurrentSceneName() {
+    const data = this.getItem();
+    return data.sceneName;
+  }
+
   setChat(chat: IQuesAns) {
     const data = this.getItem();
     if (data) {

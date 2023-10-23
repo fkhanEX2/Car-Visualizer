@@ -7,8 +7,6 @@ interface IInitialView {
 
 interface IHotspot {
   id: number;
-  yaw: number;
-  pitch: number;
   thumbnail: string;
   header: string;
   sceneId: number;
@@ -30,7 +28,6 @@ interface ICategory {
   id: number;
   name: string;
   thumbnail: string;
-  initialView: IInitialView;
   swatches: ISwatch[];
 }
 
@@ -51,7 +48,6 @@ interface IScene {
   name: string;
   baseImage: string;
   categories: ICategory[];
-  initialView: IInitialView;
   initialPosition: IInitialPosition;
   initialRotation: IInitialRotation;
   isDefault: boolean;

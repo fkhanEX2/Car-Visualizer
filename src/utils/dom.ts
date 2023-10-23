@@ -9,4 +9,11 @@ const $queryAll = (selector: string, element?: HTMLElement) =>
     ? element.querySelectorAll(selector)
     : document.querySelectorAll(selector);
 
-export { $id, $query, $queryAll };
+const clearChatInputField = () => {
+  const chatInputElement = $query(`.chat-input`);
+  if (chatInputElement) {
+    (chatInputElement as HTMLInputElement).value = "";
+  }
+};
+
+export { $id, $query, $queryAll, clearChatInputField };

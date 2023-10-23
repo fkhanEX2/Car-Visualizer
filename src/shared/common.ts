@@ -68,3 +68,9 @@ export const getUpdatedSelections = (sceneId: number) => {
   });
   return updatedSelections;
 };
+
+export const getSceneFromSceneName = (sceneName: string) => {
+  return cacheStorage.storage.visualizer.scenes.find(
+    (scene) => scene.name === sceneName
+  );
+};
