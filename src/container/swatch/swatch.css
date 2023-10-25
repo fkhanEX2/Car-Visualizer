@@ -1,10 +1,11 @@
-.swatch-category {
+.swatch-category{
   padding: 30px;
   position: fixed;
   background-color: #fff;
   width: 300px;
   height: 100vh;
   top: 0;
+  transition: transform 0.5s linear;
   transform: translateX(0);
  }
  
