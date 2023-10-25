@@ -1,0 +1,202 @@
+.skeleton{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100; 
+    background-color: #717171;
+    opacity: 0.7;
+  }
+  
+  .skeleton-category{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    top: 39px;
+    left: 47px;
+    padding: 20px 10px;
+    border-radius: 50px;
+    color: #fff;
+    background-color:#484848;
+    align-items:center;
+    width: 70px;
+    height: 156px;
+  }
+  .skeleton-category-container-list-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .skeleton-category-container-list-item .image{
+   width: 20px;
+   height: 25px;
+   background-color: #717171;
+   border-radius: 4px;
+  }
+  .skeleton-category-container-list-item p{
+   width: 41px;
+   height: 20px;
+   background-color: #717171;
+   border-radius: 4px;
+  }
+  .category-container-list{
+    background-color: #333;
+    width: 70px;
+    opacity: 0.5;
+  }
+  .skeleton-category-container-list-item .image::before
+  {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 21px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  .skeleton-category-container-list-item p::before
+  {
+    position: absolute;
+    content: "";
+    width: 41px;
+   height: 20px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  
+  .skeleton-category-container-list-item .image::before{
+    animation-delay: 0.5s;
+  }
+  .skeleton-category-container-list-item p::before{
+      animation-delay: 0.5s;
+  }
+  .skeleton-chat-header{
+  width: 294px;
+  height: 54px;
+  background-color: #333;
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  }
+  .chat-image{
+    width: 31px;
+    height: 30px;
+    background-color: #717171;
+    border-radius: 4px;
+  }
+  .chat-text{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+  }
+  .chat-text h3{
+    width: 172px;
+    height: 19px;
+    background-color: #717171;
+    border-radius: 4px;
+  }
+  .chat-text p{
+    width: 185px;
+    height: 14px;
+    background-color: #717171;
+    border-radius: 4px;
+  }
+  .chat-collapse{
+    width: 31px;
+    height: 30px;
+    background-color: #717171;
+    border-radius: 4px;
+  }
+  .chat-image::before
+  {
+    position: absolute;
+    content: "";
+    width: 31px;
+    height: 30px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  .chat-text h3::before
+  {
+    position: absolute;
+    content: "";
+    width: 185px;
+    height: 14px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  .chat-text p::before
+  {
+    position: absolute;
+    content: "";
+    width: 172px;
+    height: 19px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  .chat-collapse::before
+  {
+    position: absolute;
+    content: "";
+    width: 31px;
+    height: 30px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat:no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+.car-image-container{
+    position: absolute;
+    bottom: 40px;
+    left: 47px;
+    background-color: #333;
+    border-radius: 50px;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  }
+  .car-image-container::before
+  {
+    position: absolute;
+    content: "";
+    height: 55px;
+    width: 55px;
+    background-image: linear-gradient(to right, #212121 0%, rgba(0,0,0,0.06) 20%, #212121 40%, #212121 100%);
+    background-repeat:no-repeat;
+    animation: shimmer 2.5s linear infinite normal forwards;
+    border-radius: 4px;
+  }
+  .chat-image::before, .chat-text h3::before, .chat-text p::before,.chat-collapse::before,.car-image-container::before{
+    animation-delay: 0.5s;
+  }
+  @keyframes shimmer {
+    0%{
+      background-position: 0;
+    }
+    100%{
+      background-position: 450px 0;
+    }
+  }

@@ -53,7 +53,7 @@ export const initializeSwatches = (
   );
   if (swatchCloseButton && newSwatchContainer) {
     swatchCloseButton.addEventListener("click", () => {
-      newSwatchContainer.classList.add("hide");
+      newSwatchContainer.classList.remove("side-bar-open");
     });
   }
   const swatchesLi = $queryAll(
@@ -183,9 +183,9 @@ export const renderSwatches = (
   thumbnail: string
 ) => {
   return `
-  <div class="swatch-category hide">
+  <div class="swatch-category ">
     <div class="swatch-header">
-      <div class="swatch-header-text">
+      <div class="swatch-header-text"
         <img class="swatch-container-category-icon" src=${thumbnail}>
         <p>${categoryName}</p>
       </div>

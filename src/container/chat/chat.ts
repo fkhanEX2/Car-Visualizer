@@ -59,7 +59,7 @@ export const renderChat = (chats: IQuesAns[]) => {
         </div>
         <img class="chat-collapse-icon rotate" src=${CollapseIcon}/>
       </div>
-      <div class="chat-body hidden">
+      <div class="chat-body">
         <div class="chat-list-container">
           <ul class="chat-list">
             ${chats.map((chat) => renderQuery(chat)).join("")}
@@ -79,11 +79,11 @@ export const renderChat = (chats: IQuesAns[]) => {
 
 export const attachChatCollapseEvent = () => {
   const toggleButton = $query(`.chat-collapse-icon`);
-  const chatWindow = $query(".chat-body");
+  const chatWindow = $query(".chat-container");
   if (toggleButton && chatWindow) {
     toggleButton.addEventListener("click", () => {
       toggleButton.classList.toggle("rotate");
-      chatWindow.classList.toggle("hidden");
+      chatWindow.classList.toggle("chat-open");
     });
   }
 };

@@ -28,7 +28,10 @@ export const loadCategory = (currentScene: IScene, container: string) => {
         categoryClick(event.target as HTMLElement);
         const swatchContainer = $query(".swatch-category");
         if (swatchContainer) {
-          swatchContainer.classList.remove("hide");
+          setTimeout(function(){
+          // swatchContainer.classList.remove("hide");
+          swatchContainer.classList.add("side-bar-open");
+        }, 100);
         }
       })
     );

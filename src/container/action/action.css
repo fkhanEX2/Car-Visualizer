@@ -1,3 +1,21 @@
 .action-item-door-opened {
   cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  left: 47px;
+  background-color: #333;
+  border-radius: 50px;
+  height: 55px;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+.action-item-door-opened img{
+width: 28px;
+height: 27px;
+}
+.action-item-door-opened.active{
+  border: 2px solid #fff;
+  transition: 0.5s;
 }

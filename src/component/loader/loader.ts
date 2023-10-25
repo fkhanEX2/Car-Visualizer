@@ -13,16 +13,15 @@ export const addLoader = (containerId: string) => {
   const container = $id(containerId);
   // container?.appendChild(loaderHtml());
 };
-// const loaderHtml = () => {
-//   return `<div class="skeleton">
-//   <div class "tab-container">
-//       <ul class="button">
-//          <li class="tab"></li>
-//          <li class="tab"></li>
-//          <li class="tab"></li>
-//          <li class="tab"></li>
-//       </ul>
-//   </div>
-  
-//   </div>`
-// };
+const loaderHtml = () => {
+  return `<div class="loader" id="loader-processing" style="display: none;">
+  <div class="loader-inner">
+      <span class="blob blob-0"></span>
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="blob blob-4"></span>
+      <span class="blob blob-5"></span>
+  </div>
+</div>`
+};
